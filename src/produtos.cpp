@@ -17,3 +17,6 @@ Produto::Produto(string nome, float preco, string marca, string codigo, data) {
 	this->dataF_ = data
 }
 
+void Produto::inserirProduto() {}
+
+void Produto::atualizarDataBase()

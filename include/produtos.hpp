@@ -52,7 +52,7 @@ public:
 	void escrever(ostream& out) const;
 	void atualizarDataBase();
 	void salvarBase();
-	void carregarBase()
+	void carregarBase();
 	
 };
 

@@ -1,12 +1,7 @@
-Nome	Preço	Codigo	Fabricação	Validade	Marca	Tipo	Condição	Quantidade	Perecivel	Descrição	Vendedor
-IPhone	2000,00	P001512-E	12/08/2014	None	Apple	Eletronico	Usado	1	None	IPhone 5S plus com pouco tempo de uso 	V001474-F
-Televisor	3520,30	P001506-E	28/02/2017	None	LG	Eletronico	Novo	200	None	Smart TV LG 4k 50" 	V001265-J
-Faqueiro Búzio	38,99	P001216-D	16/12/2015	None	Tramontina	Domestico 	Novo	1000	None	Faqueiro em inox. Modelo Malibu. Contém 20 peças, sendo: 4 facas para churrasco. 4 garfos de mesa.	V001643-J
-Cuscuz	0,79	P000100-P	05/10/2017	05/10/2019	São Braz	Perecivel 	Novo	5000	Flocão De Milho Unidades De 500g 	V004248-J
-
-
+Nome	Preço	Codigo	Fabricação	Validade	Marca	Tipo	Condição	Quantidade	Descrição	Vendedor
+IPhone	2000,00	P001512-E	12/08/2014	None	Apple	Eletronico	Usado	1	IPhone 5S plus com pouco tempo de uso 	V001474-F
+Televisor	3520,30	P001506-E	28/02/2017	None	LG	Eletronico	Novo	200	Smart TV LG 4k 50" 	V001265-J
+Faqueiro Búzio	38,99	P001216-D	16/12/2015	None	Tramontina	Domestico 	Novo	1000	Faqueiro em inox. Modelo Malibu. Contém 20 peças, sendo: 4 facas para churrasco. 4 garfos de mesa.	V001643-J
 
 E = eletronico
 D = domestico
-P = perecivel
-N = não perecivel

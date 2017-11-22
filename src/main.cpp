@@ -3,9 +3,22 @@ using std::cout;
 using std::endl;
 using std::cin;
 
+#include <string>
+using std::string;
+
 #include <cstdlib>
 
-#include "loja.hpp"
+//#include "loja.hpp"
+
+void buscar() {
+	string name;
+	string images = "images/";
+	cout << "Informe o nome do produto: " << endl;
+	cin >> name;
+	images = "display" + images + name + ".jpg";
+	cout << images << endl;
+	system(images);
+}
 
 int main() {
 
@@ -24,15 +37,17 @@ int main() {
 	switch(n) {
 		case 1:
 			cout << "Efetuar login:" << endl;
+			login();
 			break;
 		case 2:	
 			cout << "Cadastrar-se:" << endl;
+			cadastro();
 			break;
 		case 3:
 			cout << "Buscar Produto:" << endl;
+			buscar();
 			break;
 		case 0:
-			cout << "Sair..." << endl;
 			exit(EXIT_SUCCESS);
 		default:
 			exit(EXIT_FAILURE);
