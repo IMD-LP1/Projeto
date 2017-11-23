@@ -20,6 +20,7 @@ int main() {
 	progresso(3);
 	cout << "[OK]" << endl;
 	progresso(3);
+	cout << endl;
 	loja();
 
 }

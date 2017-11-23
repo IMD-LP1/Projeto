@@ -35,7 +35,7 @@ void loja() {
 			//cadastro();
 			break;
 		case 3:
-			cout << "Buscar Produto:" << endl;
+			//cout << "Buscar Produto:" << endl;
 			buscar();
 			break;
 		case 0:
