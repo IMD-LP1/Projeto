@@ -6,11 +6,16 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+#include <cctype>
+
+#include "data.hpp"
+
 class Produto{
 private:
 	string nome_;
 	float preco_;
 	string marca_;
+	string condicao_;
 	string codigo_;
 	Data dataF_;
 
@@ -26,12 +31,18 @@ public:
 
 	string getMarca();
 	void setMarca(const string marca);
-
+	
+	string getCondicao();
+	void setCondicao(const string condicao);
+	
+	int getQuantidade();
+	void setQuantidade(const int quantidade);
+	
 	string getCodigo();
 	void setCodigo(const string codigo);
 
-	Data getData();
-	void setData(int dia, int mes, int ano);
+	Data getFabricacao();
+	void setFabricacao(int dia, int mes, int ano);
 	
 
 	void escrever(ostream& out) const {
@@ -59,4 +70,4 @@ public:
 
 ostream& operator<<(ostream& out, const CadastroProdutos& a);
 
-#endif
+#endif //_PRODUTOS_HPP_
