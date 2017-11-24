@@ -14,7 +14,7 @@ Produto::Produto(string nome, float preco, string marca, string codigo, data) {
 	this->preco_ = preco;
 	this->marca_ = marca;
 	this->codigo_ = codigo;
-	this->dataF_ = data
+	this->dataF_ = data ;
 }
 
 string Produto::getNome(){return this->nome_;}

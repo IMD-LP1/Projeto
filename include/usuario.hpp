@@ -11,7 +11,7 @@ private:
 	int idade_;
 	string CPF_;
 	string mae_;
-	Data data;
+	Data data_;
 };
 
 
