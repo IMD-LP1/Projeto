@@ -1,3 +1,11 @@
+/**
+ * @file	data.hpp
+ * @brief	Definicao da classe Data, que representa a informação da data do programa
+ * @details	Os atributos de Data são dia, mes e ano.
+ * @author	Fernando Rodrigues Maciel (fernandomaciel@ufrn.edu.br)
+ * @since	16/11/2017
+ * @date	26/11/2017
+ */
 #ifndef _DATA_HPP_
 #define _DATA_HPP_
 
@@ -6,23 +14,36 @@ using std::string;
 
 #include <sstream>
 
-
+/**
+ * @class   Data
+ * @brief   Implementação de uma classe que para armazenar dia, mes e ano 
+ */
 class Data {
 private:
-	int dia_;
-	int mes_;
-	int ano_;
+	int dia_;	//<--	Dia de fabricação do produto
+	int mes_;	//<--	Mes de fabricação do produto
+	int ano_;	//<--	Ano de fabricação do produto
 public:
 
+	/** @brief	Modifica o dia da data */
 	void setDia(int dia);
+
+	/** @brief	Retorna o dia da data */
 	int getDia();
 
+	/** @brief	Modifica o mes da data */
 	void setMes(int mes);
+	
+	/** @brief	Retorna o mes da data */
 	int getMes();
 
+	/** @brief	Modifica o mes da data */
 	void setAno(int ano);
+
+	/** @brief	Retorna o ano da data */
 	int getAno();
 
+	/** @brief	Retorna a data em formato de string */
 	string dataString();
 };
 

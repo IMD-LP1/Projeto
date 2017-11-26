@@ -1,10 +1,16 @@
+/**
+ * @file	usuario.cpp
+ * @brief	Implementacao dos metodos definidos na classe Pessoa, Usuario e Cadastrar usuario.
+ * @author	Fernando Rodrigues Maciel (fernandomaciel@ufrn.edu.br)
+ * @author
+ * @author
+ * @since	16/11/2017
+ * @date	26/11/2017
+ * @sa		usuario.hpp
+ */
 #include "usuario.hpp"
 
-Pessoa::Pessoa () {
-	string nome_;
-	int idade_;
-	string cpf_;
-	Data data_;
+Pessoa::Pessoa() {
 	this->nome_ = "", this->idade_ = 0 , this->cpf_ = "", this->data_ = (0,0,0);
 }
 
@@ -16,16 +22,36 @@ Pessoa::Pessoa(string nome , int idade, string cpf, Data data) {
 	this->data_ = data ;
 }
 
-string Pessoa::getNome() {return nome_;}
 void Pessoa::setNome(const string nome) {this->nome_ = nome;}
+string Pessoa::getNome() {return nome_;}
 
-int Pessoa::getIdade() {return idade_;}
 void Pessoa::setIdade(const int idade) {this->idade_ = idade;}
+int Pessoa::getIdade() {return idade_;}
 
-string Pessoa::getCPF() {return cpf_;}
 void Pessoa::setCPF(const string cpf) {this->cpf_ = cpf;}
+string Pessoa::getCPF() {return cpf_;}
 
-Data Pessoa::getData() {return data_;}
 void Pessoa::setData(const Data data) {this->data_ = data;}
+Data Pessoa::getData() {return data_;}
+
+
+Usuario::Usuario() {
+	this->email_ = "", this->codigo_ = "", this->senha_ = "";
+}
+
+Usuario::Usuario(string email, string codigo, string senha) {
+	this->email_ = email;
+	this->codigo_ = codigo;
+	this->senha_ = senha;
+}
+
+void Usuario::setEmail(const string email) {this->email_ = email;}
+string Usuario::getEmail() {return email_;}
+
+void Usuario::setCodigo(const string codigo) {this->codigo_ = codigo;}
+string Usuario::getCodigo() {return codigo_;}
+
+void Usuario::setSenha(const string senha) {this->senha_ = senha;}
+string Usuario::getSenha() {return senha_;}
 
 

@@ -2,6 +2,8 @@
  * @file	produtos.cpp
  * @brief	Implementacao dos metodos definidos na classe produto
  * @author	Fernando Rodrigues Maciel (fernandomaciel@ufrn.edu.br)
+ * @author
+ * @author
  * @since	16/11/2017
  * @date	25/11/2017
  * @sa		jogador.hpp

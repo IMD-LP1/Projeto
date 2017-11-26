@@ -10,6 +10,10 @@ using std::endl;
 
 #include "data.hpp"
 
+/**
+ * @class   Produto
+ * @brief   Implementação de uma classe que tem as principais caracteristicas de produto
+ */
 class Produto {
 private:
 	string nome_;		//<--	Nome do produto
