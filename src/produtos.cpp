@@ -1,40 +1,101 @@
+/**
+ * @file	produtos.cpp
+ * @brief	Implementacao dos metodos definidos na classe produto
+ * @author	Fernando Rodrigues Maciel (fernandomaciel@ufrn.edu.br)
+ * @since	16/11/2017
+ * @date	25/11/2017
+ * @sa		jogador.hpp
+ */
+
 #include "produtos.hpp"
 
+/**
+ * @details Por padrao, um produto e criado com o nome vazio 
+ *			e valores para preço e data iguais a zero. 
+ */
 Produto::Produto(){
-string nome_;
-	float preco_;
-	string marca_;
-	string codigo_;
-	Data dataF_;
-	this->nome_ = "", this->preco_ = 0.0, this->marca_ = "", this-> codigo_ = "", this-> dataF_ = (0,0,0);
+	this->nome_ = "", this->preco_ = 0.0, this->marca_ = "", this->condicao_ = "", this-> codigo_ = "", this->quantidade_ = 0, 
+	this->valor_ = 0, this-> dataF_ = (0,0,0);
 }
 
-Produto::Produto(string nome, float preco, string marca, string codigo, data) {
+Produto::Produto(string nome, float preco, string marca, string, condicao, string codigo, int quantidade, float valor, Data data) {
 	this->nome_ = nome;
 	this->preco_ = preco;
 	this->marca_ = marca;
+	this->condicao_ = condicao;
 	this->codigo_ = codigo;
+	this->quantidade_ = quantidade;
+	this->valor_ = valor;
 	this->dataF_ = data ;
 }
 
-string Produto::getNome(){return this->nome_;}
-void Produto::setNome( const string nome ) {this->nome_ = nome;}
 
-float Produto::getPreco(){return this->proco_ * this->quantidade_;}
+/** @brief Atualiza o nome do produto */
+void Produto::setNome(const string nome) {
+	this->nome_ = nome;
+}
 
-string Produto::getMarca(){ return this->marca_;}
-void Produto::setMarca(const string marca){ this->marca = marca;}
+/** @brief Retorna o nome do produto */
+string Produto::getNome() {
+	return this->nome_;
+}
 
-string Produto::getCondicao() { return this->condicao_;}
+/** @brief Atualiza o preço do produto */
+void Produto::setPreco(const float preco) {
+	this->preco_ = preco;
+}
 
-int Produto::getQuantidade(){return this->quantidade_;}
-void Produto::setQuantidade(const int quantidade){ this->quantidade_ = quantidade;}
+/** @brief Retorna o preço do produto */
+float Produto::getPreco() {
+	return this->preco_;
+}
 
-int Produto::getCodigo(){ return this->codigo_;}
-void Produto::setCodigo(const int codigo){ this->codigo_ = codigo;}
+/**	@brief Atualiza o nome da marca */
+void Produto::setMarca(const string marca) {
+	this->marca_ = marca;
+}
+
+/**	@brief Retorna a marca do produto */
+string Produto::getMarca() {
+	return this->marca_;
+}
+
+/** @brief Atualiza a condição do produto */
+void Produto::setCondicao(const string condicao) {
+	this->condicao_ = condicao;
+}
+
+/**	@brief Retorna a condição do produto (novo ou usado) */
+string Produto::getCondicao() {
+	return this->condicao_;
+}
+
+/** @brief Atualiza o codigo do produto*/
+void Produto::setCodigo(const int codigo) {
+	this->codigo_ = codigo;
+}
+
+/** @brief Retorna o codigo do produto */
+int Produto::getCodigo() {
+	return this->codigo_;
+}
+
+/** @brief Atualiza a quantidade do produto */
+void Produto::setQuantidade(const int quantidade) {
+	this->quantidade_ = quantidade;
+}
+
+/** @brief  Retorna a quantidade do produto */
+int Produto::getQuantidade() {
+	return this->quantidade_;
+}
+
 
 /*
-string Produto::getFabricacao(){ return this->fabricacao_;}
+string Produto::getFabricacao() {
+	fabricacao_ = dataString(dia_, mes_, ano_);
+	return fabricacao_;
+}
 void Produto::setFabricacao(int dia, int mes, int ano) { 
 	this->dia_ = dia;
 	this->mes_ = mes;
@@ -42,6 +103,13 @@ void Produto::setFabricacao(int dia, int mes, int ano) {
 	
 }
 */
+
+
+/**	@brief Retorna o total a ser pago por produto */
+float Produto::getValorTotal() {
+	return this->proco_ * this->quantidade_;
+}
+
 
 ostream& operator<<(ostream& out, const Produto* a) {
 	a->escrever(out);

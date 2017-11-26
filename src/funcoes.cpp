@@ -1,5 +1,6 @@
 #include "funcoes.hpp"
 #include <ctime>
+
 void progresso(int n) {
 	
 	int i;

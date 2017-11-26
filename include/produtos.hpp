@@ -10,47 +10,52 @@ using std::endl;
 
 #include "data.hpp"
 
-class Produto{
+class Produto {
 private:
-	string nome_;
-	float preco_;
-	string marca_;
-	string condicao_;
-	string codigo_;
-	Data dataF_;
+	string nome_;		//<--	Nome do produto
+	float preco_;		//<--	Valor unitario do produto
+	string marca_;		//<--	Marca do produto
+	string condicao_;	//<<-	Condição do produto (novo ou usado)
+	string codigo_;		//<--	Codigo do produto
+	int quantidade_;	//<--	Quantidade do produto
+	float valor_;		//<--	valor total de produtos
+	Data dataF_;		//<--	Data de fabricação do produto
 
 public:
-	Produto();
-	Produto(string nome, float preco, string marca, string codigo, dataF{int dia, int mes, int ano});
+	Produto();	//<--	Construtor padrão
+	Produto(string nome, float preco, string marca, string condicao, string codigo, int quantidade, Data data dataF{int dia, int mes, int ano});	//<--	Construtor parametrizado
 	
-	string getNome();
 	void setNome(const string nome);
-
-	float getPreco()
+	string getNome();
+	
 	void setPreco(const float preco);
-
-	string getMarca();
+	float getPreco();
+	
 	void setMarca(const string marca);
+	string getMarca();
 	
-	string getCondicao();
 	void setCondicao(const string condicao);
+	string getCondicao();
 	
-	int getQuantidade();
-	void setQuantidade(const int quantidade);
-	
-	string getCodigo();
 	void setCodigo(const string codigo);
-
-	Data getFabricacao();
-	void setFabricacao(int dia, int mes, int ano);
+	string getCodigo();
 	
+	void setQuantidade(const int quantidade);
+	int getQuantidade();
+	
+	void setFabricacao(int dia, int mes, int ano);
+	Data getFabricacao();
+
+	float getValorTotal();
 
 	void escrever(ostream& out) const {
-		out << "Produto: " << nome << endl;
-		out << "Preço: " << preco << endl;
-		out << "Marca: " << marca << endl;
-		out << "Codigo: " << codigo << endl;
-		out << "Data Fabricação: " << dataF << endl;
+		out << "Produto: " << nome_ << endl;
+		out << "Preço: " << preco_ << endl;
+		out << "Marca: " << marca_ << endl;
+		out << "Condição: " << condicao_ << endl;
+		out << "Codigo: " << codigo_ << endl;
+		out << "Quantidade: " << quantidade_ << endl;
+		out << "Data Fabricação: " << dataF_ << endl;
 
 	}
 };
