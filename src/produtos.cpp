@@ -22,8 +22,9 @@ Produto::Produto() {
 	this->condicao_ = "" ; 
 	this-> codigo_ = "" ; 
 	this->quantidade_ = 0 ; 
-	this->valor_ = 0 ; 
-	this->dataF_ = {} ;
+	this->valor_ = 0 ;
+	Data d(0,0,0) ; 
+	this->dataF_ = d ;
 }
 
 Produto::Produto(string nome, float preco, string marca, string condicao, string codigo, int quantidade, float valor, Data data) {
@@ -99,18 +100,17 @@ int Produto::getQuantidade() {
 }
 
 
-/*
-string Produto::getFabricacao() {
-	fabricacao_ = dataString(dia_, mes_, ano_);
-	return fabricacao_;
-}
 void Produto::setFabricacao(int dia, int mes, int ano) { 
 	this->dia_ = dia;
 	this->mes_ = mes;
 	this->ano_ = ano;
 	
 }
-*/
+
+string Produto::getFabricacao() {
+	fabricacao_ = dataString(dia_, mes_, ano_);
+	return fabricacao_;
+}
 
 
 /**	@brief Retorna o total a ser pago por produto */
@@ -118,6 +118,16 @@ float Produto::getValorTotal() {
 	return this->preco_ * this->quantidade_;
 }
 
+void escrever(ostream& out) const {
+		cout << "Produto: " << nome_ << endl;
+		cout << "Preço: " << preco_ << endl;
+		cout << "Marca: " << marca_ << endl;
+		cout << "Condição: " << condicao_ << endl;
+		cout << "Codigo: " << codigo_ << endl;
+		cout << "Quantidade: " << quantidade_ << endl;
+		cout << "Data Fabricação: " << dataF_.dataString() << endl;
+
+	}
 
 ostream& operator<<(ostream& out) {
 	a->escrever(out);
@@ -154,13 +164,13 @@ void CadastrarProduto::inserirProduto() {
 	cin >> quantidade;
 	setQuantidade(quantidade);
 	//Criar função para gerar codigo aleatorio para produto;
-	setCodigo(CodigoProduto());
+	setCodigo(gerarCodigo("P"));
 	
-	/*
+	
 	cout << "Informe a data de Fabricação do produto: ";
 	cin >> dia >> mes >> ano;
-	getFabricacao(data):
-	*/
+	getFabricacao(dia, mes, ano):
+	
 	
 	cout << "Confimar cadastro de produto para venda [S/n]? ";
 	cin >> confirmar;
@@ -180,35 +190,4 @@ void CadastrarProduto::inserirProduto() {
 
 // void Produto::atualizarDataBase() {
 
-
-
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

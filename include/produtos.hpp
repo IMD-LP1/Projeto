@@ -53,20 +53,11 @@ public:
 	Data getFabricacao();
 
 	float getValorTotal();
-	void escrever(){
-	//void escrever(ostream& out) const {
-		cout << "Produto: " << nome_ << endl;
-		cout << "Preço: " << preco_ << endl;
-		cout << "Marca: " << marca_ << endl;
-		cout << "Condição: " << condicao_ << endl;
-		cout << "Codigo: " << codigo_ << endl;
-		cout << "Quantidade: " << quantidade_ << endl;
-		cout << "Data Fabricação: " << dataF_.dataString() << endl;
 
-	}
+	
 };
 
-class CadastrarProduto : public Produto{
+class Store : public Produto{
 private:
 public:
 	void inserirProduto();

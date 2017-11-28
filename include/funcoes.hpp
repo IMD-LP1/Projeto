@@ -8,5 +8,7 @@ using std::cin;
 #include <cstdlib>
 
 void progresso(int n);
+string gerarCodigo(string tipo);
+
 
 #endif //_FUNCOES_HPP_

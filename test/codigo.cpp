@@ -1,20 +1,9 @@
-#include "funcoes.hpp"
-#include <ctime>
-#include <cstdlib>
 #include <iostream>
+#include <cstdlib>
 #include <string>
+#include <ctime>
 
-void progresso(int n) {
-	
-	int i;
-	cout << "[";
-	for(i = 0; i <= n; i++) {
-		cout << ".";
-		system("sleep 0.3");
-	}
-	cout << "]";
-}
-
+using namespace std;
 string gerarCodigo(string tipo) {
 
 	srand(time(nullptr));
@@ -25,8 +14,6 @@ string gerarCodigo(string tipo) {
 	codigo = tipo + code[rand() % 26] + to_string(rand() % 9999);
 	
 	while(i < 3) {
-
-		//IMPLEMENTAR BUSCAR CODIGO E COMPARAR
 		if(tipo == "PS4577") {
 			//tipo = "PS4577";
 			return(gerarCodigo(tipo));
@@ -36,4 +23,13 @@ string gerarCodigo(string tipo) {
 	}
 	cout << "Não foi possivel criar o codigo" << endl;
 	return 0;
+}
+
+int main() {
+
+	string codigo;
+
+	codigo = gerarCodigo("P");
+
+	cout << codigo << endl;
 }

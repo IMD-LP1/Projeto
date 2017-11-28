@@ -10,7 +10,6 @@ SRC_DIR=src
 OBJ_DIR=build
 BIN_DIR=bin
 DOC_DIR=doc
-OUT_DIR=output
 
 RM = rm -rf
 
@@ -59,6 +58,5 @@ doc:
 	doxygen
 
 clean:
-	$(RM) $(OBJ_DIR)/*
-	$(RM) $(BIN_DIR)/*
-	$(RM) $(OUT_DIR)/*
+	$(RM) $(OBJ_DIR)
+	$(RM) $(BIN_DIR)
