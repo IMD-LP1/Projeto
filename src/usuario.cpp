@@ -15,11 +15,10 @@ Pessoa::Pessoa() {
 }
 
 Pessoa::Pessoa(string nome , int idade, string cpf, Data data) {
-	this->nome_ = nome ;
-	this->idade_ = idade ;
-	this->cpf_ = cpf ;
-	this->mae_ = mae_ ;
-	this->data_ = data ;
+	this->nome_ = nome;
+	this->idade_ = idade;
+	this->cpf_ = cpf;
+	this->data_ = data;
 }
 
 void Pessoa::setNome(const string nome) {this->nome_ = nome;}
@@ -53,5 +52,6 @@ string Usuario::getCodigo() {return codigo_;}
 
 void Usuario::setSenha(const string senha) {this->senha_ = senha;}
 string Usuario::getSenha() {return senha_;}
+
 
 
