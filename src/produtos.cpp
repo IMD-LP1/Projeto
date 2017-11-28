@@ -133,61 +133,6 @@ ostream& operator<<(ostream& out) {
 	a->escrever(out);
 	return out;
 }
-
-void CadastrarProduto::inserirProduto() {
-	
-	char confirmar;
-	int quantidade, dia, mes, ano;
-	float valor;
-	string nome;
-	
-	cout << "Informe o nome do produto: ";
-	cin.ignore(0);
-	getline(cin, nome);
-	setNome(nome);
-	
-	cout << "Informe o preço do produto: ";
-	cin >> valor;
-	setPreco(valor);
-	
-	cout << "Informe a marca do produto: ";
-	cin.ignore(0);
-	getline(cin, nome);
-	setMarca(nome);
-	
-	cout << "Informe a condição do produto [novo/usado]: ";
-	cin >> nome;
-	//nome = toupper(nome);
-	setCondicao(nome);
-	
-	cout << "Informe a quantidade do produto disponivel para venda: ";
-	cin >> quantidade;
-	setQuantidade(quantidade);
-	//Criar função para gerar codigo aleatorio para produto;
-	setCodigo(gerarCodigo("P"));
-	
-	
-	cout << "Informe a data de Fabricação do produto: ";
-	cin >> dia >> mes >> ano;
-	getFabricacao(dia, mes, ano):
-	
-	
-	cout << "Confimar cadastro de produto para venda [S/n]? ";
-	cin >> confirmar;
-	confirmar = toupper(confirmar);
-	// IMPLEMENTAR TRATAMENTO DE EXCEÇÃO PARA CONFIRMAÇÃO
-	//tratarConfirmacao(confirmar);
-	if(confirmar == 'S') {
-		salvarDados();
-	} else {
-		cout << "Todo as informações inseridas seram perdidas" << endl;
-		cout << "Precione enter para continuar " << endl;
-		cin.ignore().get();
-		loja();
-	}
-	
-}
-
 // void Produto::atualizarDataBase() {
 
 // }
