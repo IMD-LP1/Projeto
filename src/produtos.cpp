@@ -10,17 +10,23 @@
  */
 
 #include "produtos.hpp"
-
+#include "loja.hpp"
 /**
  * @details Por padrao, um produto e criado com o nome vazio 
  *			e valores para preço e data iguais a zero. 
  */
-Produto::Produto(){
-	this->nome_ = "", this->preco_ = 0.0, this->marca_ = "", this->condicao_ = "", this-> codigo_ = "", this->quantidade_ = 0, 
-	this->valor_ = 0, this-> dataF_ = (0,0,0);
+Produto::Produto() {
+	this->nome_ = "" ;
+	this->preco_ = 0.0; 
+	this->marca_ = "" ; 
+	this->condicao_ = "" ; 
+	this-> codigo_ = "" ; 
+	this->quantidade_ = 0 ; 
+	this->valor_ = 0 ; 
+	this->dataF_ = {} ;
 }
 
-Produto::Produto(string nome, float preco, string marca, string, condicao, string codigo, int quantidade, float valor, Data data) {
+Produto::Produto(string nome, float preco, string marca, string condicao, string codigo, int quantidade, float valor, Data data) {
 	this->nome_ = nome;
 	this->preco_ = preco;
 	this->marca_ = marca;
@@ -73,12 +79,12 @@ string Produto::getCondicao() {
 }
 
 /** @brief Atualiza o codigo do produto*/
-void Produto::setCodigo(const int codigo) {
+void Produto::setCodigo(const string codigo) {
 	this->codigo_ = codigo;
 }
 
 /** @brief Retorna o codigo do produto */
-int Produto::getCodigo() {
+string Produto::getCodigo() {
 	return this->codigo_;
 }
 
@@ -109,16 +115,16 @@ void Produto::setFabricacao(int dia, int mes, int ano) {
 
 /**	@brief Retorna o total a ser pago por produto */
 float Produto::getValorTotal() {
-	return this->proco_ * this->quantidade_;
+	return this->preco_ * this->quantidade_;
 }
 
 
-ostream& operator<<(ostream& out, const Produto* a) {
+ostream& operator<<(ostream& out) {
 	a->escrever(out);
 	return out;
 }
 
-void Produto::inserirProduto() {
+void CadastrarProduto::inserirProduto() {
 	
 	char confirmar;
 	int quantidade, dia, mes, ano;
@@ -141,14 +147,14 @@ void Produto::inserirProduto() {
 	
 	cout << "Informe a condição do produto [novo/usado]: ";
 	cin >> nome;
-	nome = toupper(nome);
+	//nome = toupper(nome);
 	setCondicao(nome);
 	
 	cout << "Informe a quantidade do produto disponivel para venda: ";
 	cin >> quantidade;
-	getQuantidade(quantidade);
+	setQuantidade(quantidade);
 	//Criar função para gerar codigo aleatorio para produto;
-	getCodigo(CodigoProduto());
+	setCodigo(CodigoProduto());
 	
 	/*
 	cout << "Informe a data de Fabricação do produto: ";
@@ -172,11 +178,11 @@ void Produto::inserirProduto() {
 	
 }
 
-void Produto::atualizarDataBase() {
+// void Produto::atualizarDataBase() {
 
 
 
-}
+// }
 
 
 

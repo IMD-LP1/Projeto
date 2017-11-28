@@ -6,6 +6,8 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+#include <ostream>
+
 #include <cctype>
 
 #include "data.hpp"
@@ -27,7 +29,7 @@ private:
 
 public:
 	Produto();	//<--	Construtor padrão
-	Produto(string nome, float preco, string marca, string condicao, string codigo, int quantidade, Data data dataF{int dia, int mes, int ano});	//<--	Construtor parametrizado
+	Produto(string nome, float preco, string marca, string condicao, string codigo, int quantidade, float valor, Data dataF);	//<--	Construtor parametrizado
 	
 	void setNome(const string nome);
 	string getNome();
@@ -51,20 +53,20 @@ public:
 	Data getFabricacao();
 
 	float getValorTotal();
-
-	void escrever(ostream& out) const {
-		out << "Produto: " << nome_ << endl;
-		out << "Preço: " << preco_ << endl;
-		out << "Marca: " << marca_ << endl;
-		out << "Condição: " << condicao_ << endl;
-		out << "Codigo: " << codigo_ << endl;
-		out << "Quantidade: " << quantidade_ << endl;
-		out << "Data Fabricação: " << dataF_ << endl;
+	void escrever(){
+	//void escrever(ostream& out) const {
+		cout << "Produto: " << nome_ << endl;
+		cout << "Preço: " << preco_ << endl;
+		cout << "Marca: " << marca_ << endl;
+		cout << "Condição: " << condicao_ << endl;
+		cout << "Codigo: " << codigo_ << endl;
+		cout << "Quantidade: " << quantidade_ << endl;
+		cout << "Data Fabricação: " << dataF_.dataString() << endl;
 
 	}
 };
 
-class CadastrarProduto {
+class CadastrarProduto : public Produto{
 private:
 public:
 	void inserirProduto();
@@ -77,6 +79,6 @@ public:
 };
 
 
-ostream& operator<<(ostream& out, const CadastroProdutos& a);
+//ostream& operator<<(ostream& out, const CadastroProdutos& a);
 
 #endif //_PRODUTOS_HPP_

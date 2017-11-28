@@ -25,7 +25,7 @@ init:
 	@mkdir -p $(BIN_DIR)/
 	@mkdir -p $(OBJ_DIR)/
 
-E-Commerce: $(OBJ_DIR)/funcoes.o $(OBJ_DIR)/loja.o $(OBJ_DIR)/main.o
+E-Commerce: $(OBJ_DIR)/data.o $(OBJ_DIR)/produtos.o $(OBJ_DIR)/usuario.o $(OBJ_DIR)/funcoes.o $(OBJ_DIR)/loja.o $(OBJ_DIR)/main.o 
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -33,13 +33,22 @@ E-Commerce: $(OBJ_DIR)/funcoes.o $(OBJ_DIR)/loja.o $(OBJ_DIR)/main.o
 	@echo "+++ Executavel criado em $(BIN_DIR)/$(PROG) +++"
 	@echo "============="
 
+$(OBJ_DIR)/data.o: $(SRC_DIR)/data.cpp $(INC_DIR)/data.hpp
+	$(CC) -c $(CPPFLAGS) -o $@ $<
+
+$(OBJ_DIR)/produtos.o: $(SRC_DIR)/produtos.cpp $(INC_DIR)/produtos.hpp $(INC_DIR)/data.hpp $(INC_DIR)/loja.hpp
+	$(CC) -c $(CPPFLAGS) -o $@ $<
+
+$(OBJ_DIR)/usuario.o: $(SRC_DIR)/usuario.cpp $(INC_DIR)/usuario.hpp $(INC_DIR)/data.hpp
+	$(CC) -c $(CPPFLAGS) -o $@ $<
+
 $(OBJ_DIR)/funcoes.o: $(SRC_DIR)/funcoes.cpp $(INC_DIR)/funcoes.hpp
 	$(CC) -c $(CPPFLAGS) -o $@ $<
 
 $(OBJ_DIR)/loja.o: $(SRC_DIR)/loja.cpp $(INC_DIR)/loja.hpp
 	$(CC) -c $(CPPFLAGS) -o $@ $<
 
-$(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp $(INC_DIR)/loja.hpp $(INC_DIR)/funcoes.hpp
+$(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp $(INC_DIR)/loja.hpp $(INC_DIR)/funcoes.hpp 
 	$(CC) -c $(CPPFLAGS) -o $@ $<
 
 doxy:

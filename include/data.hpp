@@ -25,6 +25,12 @@ private:
 	int ano_;	//<--	Ano de fabricação do produto
 public:
 
+	/**	@brief Construtor da classe sem parametros */
+	Data() ;
+
+	/**	@brief Construtor da classe parametrizado */
+	Data(int dia, int mes , int ano) ;
+
 	/** @brief	Modifica o dia da data */
 	void setDia(int dia);
 

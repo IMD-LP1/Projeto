@@ -32,7 +32,7 @@ void Data::setDia(const int dia) {
 }
 
 /** @brief  Retorna o dia do produto */
-string Data::getDia() {
+int Data::getDia() {
 	return dia_;
 }
 
@@ -42,7 +42,7 @@ void Data::setMes(const int mes) {
 }
 
 /** @brief  Retorna o mes do produto */
-string Data::getMes() {
+int Data::getMes() {
 	return mes_;
 }
 
@@ -52,7 +52,7 @@ void Data::setAno(const int ano) {
 }
 
 /** @brief  Retorna o ano do produto */
-string Data::getAno() {
+int Data::getAno() {
 	return ano_;
 }
 
