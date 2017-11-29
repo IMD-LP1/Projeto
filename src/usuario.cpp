@@ -11,13 +11,14 @@
 #include "usuario.hpp"
 
 Pessoa::Pessoa() {
-	this->nome_ = "", this->idade_ = 0 , this->cpf_ = "", this->data_ = (0,0,0);
+	Data d(0,0,0) ;
+	this->nome_ = "", this->idade_ = 0 , this->CPF_ = "", this->data_ = d;
 }
 
 Pessoa::Pessoa(string nome , int idade, string cpf, Data data) {
 	this->nome_ = nome;
 	this->idade_ = idade;
-	this->cpf_ = cpf;
+	this->CPF_ = cpf;
 	this->data_ = data;
 }
 
@@ -27,8 +28,8 @@ string Pessoa::getNome() {return nome_;}
 void Pessoa::setIdade(const int idade) {this->idade_ = idade;}
 int Pessoa::getIdade() {return idade_;}
 
-void Pessoa::setCPF(const string cpf) {this->cpf_ = cpf;}
-string Pessoa::getCPF() {return cpf_;}
+void Pessoa::setCPF(const string cpf) {this->CPF_ = cpf;}
+string Pessoa::getCPF() {return CPF_;}
 
 void Pessoa::setData(const Data data) {this->data_ = data;}
 Data Pessoa::getData() {return data_;}

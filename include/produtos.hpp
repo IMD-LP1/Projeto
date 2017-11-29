@@ -49,8 +49,8 @@ public:
 	void setQuantidade(const int quantidade);
 	int getQuantidade();
 	
-	void setFabricacao(int dia, int mes, int ano);
-	Data getFabricacao();
+	void setFabricacao(Data d);
+	string getFabricacao();
 
 	float getValorTotal();
 
@@ -62,7 +62,7 @@ private:
 public:
 	void inserirProduto();
 	string buscarProduto(string codigo);
-	void escrever(ostream& out) const;
+	void escrever(std::ostream& out) const;
 	void atualizarDataBase();
 	void salvarBase();
 	void carregarBase();

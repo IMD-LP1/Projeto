@@ -6,7 +6,8 @@
  * @author
  * @since	16/11/2017
  * @date	25/11/2017
- * @sa		jogador.hpp
+ * @sa		produtos.hpp
+ * @sa		loja.hpp
  */
 
 #include "produtos.hpp"
@@ -34,7 +35,7 @@ Produto::Produto(string nome, float preco, string marca, string condicao, string
 	this->condicao_ = condicao;
 	this->codigo_ = codigo;
 	this->quantidade_ = quantidade;
-	this->valor_ = valor;
+	this->valor_ = valor;	
 	this->dataF_ = data ;
 }
 
@@ -100,16 +101,15 @@ int Produto::getQuantidade() {
 }
 
 
-void Produto::setFabricacao(int dia, int mes, int ano) { 
-	this->dia_ = dia;
-	this->mes_ = mes;
-	this->ano_ = ano;
-	
+void Produto::setFabricacao(Data d) { 
+	this->dataF_ = d ;	
 }
 
 string Produto::getFabricacao() {
-	fabricacao_ = dataString(dia_, mes_, ano_);
+	string fabricacao_ ;
+	fabricacao_ = dataF_.dataString();
 	return fabricacao_;
+	//return dataF_ ;
 }
 
 
@@ -118,7 +118,7 @@ float Produto::getValorTotal() {
 	return this->preco_ * this->quantidade_;
 }
 
-void escrever(ostream& out) const {
+/*void escrever(std::ostream& out) const {
 		cout << "Produto: " << nome_ << endl;
 		cout << "Preço: " << preco_ << endl;
 		cout << "Marca: " << marca_ << endl;
@@ -126,13 +126,12 @@ void escrever(ostream& out) const {
 		cout << "Codigo: " << codigo_ << endl;
 		cout << "Quantidade: " << quantidade_ << endl;
 		cout << "Data Fabricação: " << dataF_.dataString() << endl;
-
-	}
-
-ostream& operator<<(ostream& out) {
-	a->escrever(out);
-	return out;
-}
+}*/
+/*
+std::ostream& operator<<(std::ostream& out) {
+	a->escrever(out) ;
+	return out ;
+} */
 // void Produto::atualizarDataBase() {
 
 // }

@@ -27,7 +27,7 @@ private:
 public:
 
 	Pessoa();
-	Pessoa(string nome, int idade, string cpf, Data{int dia, int mes, int ano});
+	Pessoa(string nome, int idade, string cpf, Data data);
 
 	string getNome();
 	void setNome(const string nome);
@@ -38,13 +38,16 @@ public:
 	string getCPF();
 	void setCPF(const string cpf);
 
+	Data getData() ;
+	void setData(const Data d) ;
+
 };
 
 /**
  * @class   Usuario
  * @brief   Implementação de uma classe que herda de pessoa e armazena informações do usuario
  */
-class Usuario: public pessoa {
+class Usuario: public Pessoa {
 private:
 	string email_;
 	string codigo_;
@@ -53,7 +56,7 @@ private:
 public:
 
 	Usuario();
-	Usuario(string nome, int idade, string cpf, data{int dia, int mes, int ano}, string email, string codigo);
+	Usuario(string nome, int idade, string cpf, Data data, string email, string codigo);
 
 };
 
@@ -70,7 +73,7 @@ public:
 	string dadosUsuario(string codigoUsuario);
 	void cadastrarUsuario();
 	string buscarUsuario(string codigoUsuario);
-	void gravar(ostream &out) const;
+	void gravar(std::ostream &out) const;
 	
 
 	void salvarDatabase();
@@ -82,6 +85,6 @@ public:
 };
 
 
-ostream& operator<<(ostream &out, const CadastroUsuario& user);
+std::ostream& operator<<(std::ostream &out, const CadastroUsuario& user);
 
 #endif //_USUARIO_HPP_ 
