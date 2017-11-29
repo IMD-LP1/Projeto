@@ -5,16 +5,12 @@
 using std::cout;
 using std::endl;
 using std::cin;
-
-#include <string>
-using std::string ;
-
+using std::string;
 #include <cstdlib>
-#include <ctime>
-
+#include <string>
 
 void progresso(int n);
-string gerarCodigo(string tipo);
+int gerarCodigo(string tipo);
 
 
 #endif //_FUNCOES_HPP_

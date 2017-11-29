@@ -22,14 +22,14 @@ private:
 	float preco_;		//<--	Valor unitario do produto
 	string marca_;		//<--	Marca do produto
 	string condicao_;	//<<-	Condição do produto (novo ou usado)
-	string codigo_;		//<--	Codigo do produto
+	int codigo_;		//<--	Codigo do produto
 	int quantidade_;	//<--	Quantidade do produto
 	float valor_;		//<--	valor total de produtos
 	Data dataF_;		//<--	Data de fabricação do produto
 
 public:
 	Produto();	//<--	Construtor padrão
-	Produto(string nome, float preco, string marca, string condicao, string codigo, int quantidade, float valor, Data dataF);	//<--	Construtor parametrizado
+	Produto(string nome, float preco, string marca, string condicao, int codigo, int quantidade, float valor, Data dataF);	//<--	Construtor parametrizado
 	
 	void setNome(const string nome);
 	string getNome();
@@ -43,8 +43,8 @@ public:
 	void setCondicao(const string condicao);
 	string getCondicao();
 	
-	void setCodigo(const string codigo);
-	string getCodigo();
+	void setCodigo(const int codigo);
+	int getCodigo();
 	
 	void setQuantidade(const int quantidade);
 	int getQuantidade();
@@ -53,8 +53,6 @@ public:
 	string getFabricacao();
 
 	float getValorTotal();
-
-	void escreverDataBase() ;
 
 	
 };

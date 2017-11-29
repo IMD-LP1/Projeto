@@ -1,16 +1,14 @@
-#include "store.hpp"
-
-#include <fstream>
+#include <store.hpp>
 
 Store::Store() {
-	codigo_ = "";
-	produtos_ = nullptr;
-	quant_ = 0;
+	codigo = "";
+	produtos = nullptr;
+	quant = 0;
 }
 
 void Store::alocaProdutos()
 {
-	produtos_ = new Produtos{};
+	produtos = new Produtos{};
 }
 
 void Store::inserirProduto()
@@ -23,27 +21,27 @@ void Store::inserirProduto()
 	cout << "Informe o nome do produto: ";
 	cin.ignore(0);
 	getline(cin, nome);
-	produtos_[quant_].setNome(nome);
+	produtos[quant].setNome(nome);
 	
 	cout << "Informe o preço do produto: ";
 	cin >> valor;
-	produtos_[quant_].setPreco(valor);
+	produtos[quant].setPreco(valor);
 	
 	cout << "Informe a marca do produto: ";
 	cin.ignore(0);
 	getline(cin, nome);
-	produtos_[quant_].setMarca(nome);
+	produtos[quant].setMarca(nome);
 	
 	cout << "Informe a condição do produto [novo/usado]: ";
 	cin >> nome;
 	//nome = toupper(nome);
-	produtos_[quant_].setCondicao(nome);
+	produtos[quant].setCondicao(nome);
 	
 	cout << "Informe a quantidade do produto disponivel para venda: ";
 	cin >> quantidade;
-	produtos_[quant_].setQuantidade(quantidade);
+	produtos[quant].setQuantidade(quantidade);
 	//Criar função para gerar codigo aleatorio para produto;
-	produtos_[quant_].setCodigo(CodigoProduto());
+	produtos[quant].setCodigo(gerarCodigo());
 	
 	/*
 	cout << "Informe a data de Fabricação do produto: ";
@@ -70,26 +68,14 @@ void Store::inserirProduto()
 
 bool Store::buscaProduto(string codigo)
 {
-	for(int i = 0; i < this->quant_; i++){
-		if(codigo == produtos_[i].getCodigo()){
-			produtos_[i].escrever();
+	for(int i = 0; i < this->quant; i++){
+		if(codigo == produtos[i].getCodigo()){
+			produtos[i].escrever();
 			return true;
 		}
 	}
 
 	return false;
-}
 
-void Store::atualizarDataBase() {
-	std::fstream arquivo("/Projeto/database/produtos.txt") ;
-	if (not in) {
-		std::perror("input") ;
 
-	}
-	arquivo << "Nome 	Preço	Codigo	Fabricação	Validade	Marca	
-	Tipo	Condição	Quantidade	Descrição	Vendedor" << endl ;
-	for (int i{0} ; i < quant_ ; i++) {
-		arquivo << produtos_[i].escreverDataBase() ;
-	}
-	
 }

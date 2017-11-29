@@ -13,8 +13,11 @@
 using std::cout;
 using std::endl;
 using std::cin;
-
 #include <string>
+
+#include <fstream>
+#include <sstream>
+
 using std::string;
 
 #include <cstdlib>
@@ -26,6 +29,6 @@ void login();
 void cadastro();
 void buscar();
 void vender();
-
+string verificaUsuario(string usuario, int n);
 
 #endif //_LOJA_HPP_

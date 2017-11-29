@@ -21,14 +21,14 @@ Produto::Produto() {
 	this->preco_ = 0.0; 
 	this->marca_ = "" ; 
 	this->condicao_ = "" ; 
-	this-> codigo_ = "" ; 
+	this-> codigo_ = 0 ; 
 	this->quantidade_ = 0 ; 
 	this->valor_ = 0 ;
 	Data d(0,0,0) ; 
 	this->dataF_ = d ;
 }
 
-Produto::Produto(string nome, float preco, string marca, string condicao, string codigo, int quantidade, float valor, Data data) {
+Produto::Produto(string nome, float preco, string marca, string condicao, int codigo, int quantidade, float valor, Data data) {
 	this->nome_ = nome;
 	this->preco_ = preco;
 	this->marca_ = marca;
@@ -81,12 +81,12 @@ string Produto::getCondicao() {
 }
 
 /** @brief Atualiza o codigo do produto*/
-void Produto::setCodigo(const string codigo) {
+void Produto::setCodigo(const int codigo) {
 	this->codigo_ = codigo;
 }
 
 /** @brief Retorna o codigo do produto */
-string Produto::getCodigo() {
+int Produto::getCodigo() {
 	return this->codigo_;
 }
 
@@ -116,11 +116,6 @@ string Produto::getFabricacao() {
 /**	@brief Retorna o total a ser pago por produto */
 float Produto::getValorTotal() {
 	return this->preco_ * this->quantidade_;
-}
-
-void Produto::escreverDataBase() {
-	cout << nome_ << "	" << preco_ << "	" << marca_ << "	" << condicao_ << "		" << 
-		"	"	<< codigo_ << "		" << quantidade_ << "	" << dataF_.dataString() << endl ;
 }
 
 /*void escrever(std::ostream& out) const {

@@ -20,8 +20,9 @@ void loja() {
 	cout << "4-Vender" << endl;
 	cout << "0-sair" << endl;
 	
-	//PODE SER COLOCADO UM TRATAMENTO DE EXCECÃO AQUI
+	cin >> n;
 	do{	
+		cout << "Número inválido! Digite um número válido.\n";
 		cin >> n;
 	}while(n < 0 or n > 4);
  	
@@ -66,12 +67,21 @@ void login() {
 
 	string nome;
 	string senha;
-	cout << "Usuário: ";
-	cin >> nome;
+	string senhaAUX = "";
+	while(senhaAUX == "")
+	{
+		cout << "Usuário: ";
+		cin >> nome;      		
+		senhaAUX = verificaUsuario(nome,1); 	// 1 = CASO LOGIN.
+	}
 	//IMPLEMENTAR METODO PARA BUSCAR USUARIO POR EMAIL OU CODIGO
 	// CASO O USUARIO NÃO EXISTA MOSTRAR E COLOCAR OPÇÃO DE CADASTRAR DO CONTRARIO CONTUNUAR
-	cout << "Senha: ";
-	cin >> senha;
+	while(senha != senhaAUX){
+		cout << "Senha: ";
+		cin >> senha;
+	}
+
+	cout << "OK!\n";  
 	//VERIFICAR SE SENHA CORREMPONDO COM A CADASTRADA CASO CONTRARIO PEDIR PARA O USUARIO TENTAR
 	//NOVAMENTE CASO ELE ERRE 3 VEZES INFORMAR QUE ELE DEVE ENTRAR EM CONTATO COM O SUPORTE
 
@@ -128,4 +138,29 @@ void vender() {
 		system("sleep 2");
 		loja();
 	//}
+}
+
+string verificaUsuario(string usuario, int n)
+{
+	std::ifstream file("usuarios.txt");
+	 if(!file.is_open())
+	 {
+	 	cout << "ERRO: Programa não conseguiu verificar os usuarios\n";
+	 	return "";
+	 }
+		 while (!file.eof()){
+		 	  	 string line, user, senha, nome, idade, dataNascimento;
+			 	 getline(file, line);
+			 	 std::istringstream iss(line);
+			 	 iss >> user;
+			 	 iss >> senha;
+			 	 iss >> nome;
+			 	 iss >> idade;
+			 	 iss >> dataNascimento;
+			 	 if(n == 1 && user == usuario) { return senha; }
+		 }
+
+
+	 return "";
+
 }

@@ -50,23 +50,19 @@ public:
 class Usuario: public Pessoa {
 private:
 	string email_;
-	string codigo_;
+	int codigo_;
 	string senha_;
 
 public:
 
 	Usuario();
-	Usuario(string nome, int idade, string cpf, Data data, string email, string codigo, string senha);
-
-	void setEmail(const string email) ;
-	string getEmail() ;
-
-	void setCodigo(const string codigo) ;
-	string getCodigo() ;
-
-	void setSenha(const string senha) ;
-	string getSenha() ;
-
+	Usuario(string nome, int idade, string cpf, Data data, string email, int codigo, string senha);
+	void setEmail(const string email);
+	string getEmail();
+	void setCodigo(const int codigo);
+	int getCodigo();
+	void setSenha(const string senha);
+	string getSenha();
 };
 
 /**

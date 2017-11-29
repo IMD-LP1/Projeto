@@ -36,11 +36,11 @@ Data Pessoa::getData() {return data_;}
 
 
 Usuario::Usuario() {
-	this->email_ = "", this->codigo_ = "", this->senha_ = "";
+	this->email_ = "", this->codigo_ = 0, this->senha_ = "";
 }
 
-Usuario::Usuario(string nome, int idade, string cpf, Data data, string email, string codigo, string senha) {
-	Pessoa{nome, idade, cpf , data} ;
+Usuario::Usuario(string nome, int idade, string cpf, Data data, string email, int codigo, string senha) {
+	Pessoa {nome,idade, cpf, data};
 	this->email_ = email;
 	this->codigo_ = codigo;
 	this->senha_ = senha;
@@ -49,8 +49,8 @@ Usuario::Usuario(string nome, int idade, string cpf, Data data, string email, st
 void Usuario::setEmail(const string email) {this->email_ = email;}
 string Usuario::getEmail() {return email_;}
 
-void Usuario::setCodigo(const string codigo) {this->codigo_ = codigo;}
-string Usuario::getCodigo() {return codigo_;}
+void Usuario::setCodigo(const int codigo) {this->codigo_ = codigo;}
+int Usuario::getCodigo()	 {return codigo_;}
 
 void Usuario::setSenha(const string senha) {this->senha_ = senha;}
 string Usuario::getSenha() {return senha_;}
