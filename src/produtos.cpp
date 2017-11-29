@@ -118,6 +118,11 @@ float Produto::getValorTotal() {
 	return this->preco_ * this->quantidade_;
 }
 
+void Produto::escreverDataBase() {
+	cout << nome_ << "	" << preco_ << "	" << marca_ << "	" << condicao_ << "		" << 
+		"	"	<< codigo_ << "		" << quantidade_ << "	" << dataF_.dataString() << endl ;
+}
+
 /*void escrever(std::ostream& out) const {
 		cout << "Produto: " << nome_ << endl;
 		cout << "Preço: " << preco_ << endl;

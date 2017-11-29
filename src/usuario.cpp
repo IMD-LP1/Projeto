@@ -39,7 +39,8 @@ Usuario::Usuario() {
 	this->email_ = "", this->codigo_ = "", this->senha_ = "";
 }
 
-Usuario::Usuario(string email, string codigo, string senha) {
+Usuario::Usuario(string nome, int idade, string cpf, Data data, string email, string codigo, string senha) {
+	Pessoa{nome, idade, cpf , data} ;
 	this->email_ = email;
 	this->codigo_ = codigo;
 	this->senha_ = senha;

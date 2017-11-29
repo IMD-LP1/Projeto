@@ -56,7 +56,16 @@ private:
 public:
 
 	Usuario();
-	Usuario(string nome, int idade, string cpf, Data data, string email, string codigo);
+	Usuario(string nome, int idade, string cpf, Data data, string email, string codigo, string senha);
+
+	void setEmail(const string email) ;
+	string getEmail() ;
+
+	void setCodigo(const string codigo) ;
+	string getCodigo() ;
+
+	void setSenha(const string senha) ;
+	string getSenha() ;
 
 };
 

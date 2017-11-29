@@ -54,6 +54,8 @@ public:
 
 	float getValorTotal();
 
+	void escreverDataBase() ;
+
 	
 };
 

@@ -1,7 +1,4 @@
 #include "funcoes.hpp"
-#include <ctime>
-#include <cstdlib>
-#include <iostream>
 #include <string>
 
 void progresso(int n) {
@@ -17,16 +14,14 @@ void progresso(int n) {
 
 string gerarCodigo(string tipo) {
 
-	srand(time(nullptr));
+	srand(time(NULL));
 	string codigo;
-	int i{0};
+	int i = 0;
 	char code[26] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
 	codigo = tipo + code[rand() % 26] + to_string(rand() % 9999);
 	
 	while(i < 3) {
-
-		//IMPLEMENTAR BUSCAR CODIGO E COMPARAR
 		if(tipo == "PS4577") {
 			//tipo = "PS4577";
 			return(gerarCodigo(tipo));

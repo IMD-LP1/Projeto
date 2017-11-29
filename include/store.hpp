@@ -17,9 +17,9 @@ using namespace std;
 
 class Store : public Produto{
 private:
-	string codigo; 
-	Produto* produtos;
-	int quant;
+	string codigo_; 
+	Produto* produtos_;
+	int quant_;
 
 public:
 	Store();
