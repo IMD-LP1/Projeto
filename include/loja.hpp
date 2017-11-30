@@ -19,15 +19,18 @@ using std::cin;
 #include <sstream>
 #include <algorithm>
 
+#include <vector>
+using std::vector ;
+
 using std::string;
 
 #include <cstdlib>
 
-//#include "produtos.hpp"
+#include "usuario.hpp"
 
-void loja();
+void loja(vector<Usuario>& v);
 void login();
-void cadastro();
+void cadastro(vector<Usuario>& v);
 void buscar();
 void vender();
 string verificaUsuario(string usuario, int n);

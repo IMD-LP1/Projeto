@@ -1,9 +1,14 @@
-#include "funcoes.hpp"
+
 #include <ctime>
 #include <cstdlib>
 #include <iostream>
+using std::cout ;
 #include <string>
-#include <stdlib.h> 
+using std::string ;
+#include <stdlib.h>
+
+#include "funcoes.hpp"
+#include "usuario.hpp" 
 
 void progresso(int n) {
 	
@@ -27,4 +32,23 @@ int gerarCodigo(string nome) {
 	}
 	
 	return codigo;
+}
+
+void salvarUsuarios (vector<Usuario>& v) {
+	ofstream saida("../database/usuario.txt") ;
+	if(saida.bad() || !saida || (saida.is_open() == 0)) {
+		cerr << "O arquivo usuario.txt nao abriu corretamente" << endl ;
+		cerr << "O programa sera encerrado" << endl ;
+		exit(1) ;
+	}
+	
+	/*for (vector<Usuario>::iterator it = v.begin() ; it != v.end() ; it++) {
+		cout << *it << endl ;
+		saida << *it << endl ;
+	}*/
+	for (Usuario i : v) {
+		cout << i << endl ;
+		saida << i << endl ;
+	}
+	saida.close() ;
 }

@@ -2,7 +2,7 @@
 # Created by Fernando Rodrigues Maciel
 CC=g++
 PROG=E-Commerce
-CPPFLAGS = -Wall -pedantic -std=c++11 -ansi -I. -I$(INC_DIR) -lm
+CPPFLAGS = -Wall -pedantic -std=c++11 -std=gnu++11 -ansi -I. -I$(INC_DIR) -lm
 
 LIB_DIR=lib
 INC_DIR=include

@@ -11,6 +11,9 @@ using std::cout;
 using std::endl;
 using std::cin;
 
+#include <vector>
+using std::vector ;
+
 #include <string>
 using std::string;
 
@@ -19,6 +22,7 @@ using std::string;
 #include "loja.hpp"
 #include "funcoes.hpp"
 #include "store.hpp"
+#include "usuario.hpp"
 
 
 int main() {
@@ -31,6 +35,7 @@ int main() {
 	cout << "[OK]" << endl;
 	progresso(3);
 	cout << endl;
-	loja();
+	vector<Usuario> v;
+	loja(v);
 
 }

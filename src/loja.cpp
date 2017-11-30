@@ -10,7 +10,7 @@
 #include "funcoes.hpp"
 #include "produtos.hpp"
 
-void loja() {
+void loja(vector<Usuario>& v) {
 	
 	int n;
 	system("clear");
@@ -36,7 +36,7 @@ void loja() {
 			break;
 		case 2:	
 			//ut << "Cadastrar-se:" << endl;
-			cadastro();
+			cadastro(v);
 			break;
 		case 3:
 			//cout << "Buscar Produto:" << endl;
@@ -46,6 +46,7 @@ void loja() {
 			//cout << "Vender produto:" << endl;
 			vender();
 		case 0:
+			salvarUsuarios (v) ;
 			exit(EXIT_SUCCESS);
 		default:
 			exit(EXIT_FAILURE);
@@ -89,31 +90,36 @@ void login() {
 
 }
 
-void cadastro() {
+void cadastro(vector<Usuario> &v) {
 
 	char opcao;
 	string nome;
 	string CPF;
-	string idade;
 	string email;
-	int codigo;
+	int codigo , idade;
+	Usuario u ;
 
 	cout << "Informe seu primeiro nome: ";
 	cin >> nome;
+	u.setNome(nome) ;
 
 	cout << "Informe sua idade: ";
 	cin >> idade;
+	u.setIdade(idade) ;
 	cout << "Informe seu CPF: ";
 	cin >> CPF;
+	u.setCPF(CPF) ;
 	//VERIFICAR SE JÁ EXISTE CPF CADASTRADO CASO EXISTA INFORMAR QUE O CPF ESTÁ CADASTRADO
 	//cout << "Nascimento: ";
 
 	cout << "E-mail: ";
 	cin >> email;
+	u.setEmail(email) ;
 	// VERIFICAR SE JÁ EXITE EMAIL CADASTRADO CASO EXISTA INFORMA QUE JÁ EXISTE O MESMO EMAIL CADASTRADO
 	codigo = gerarCodigo(nome);	
 	// SE TUDO OK GERAR CODIGO DE USUARIO
 	cout << "Seu codigo de usuario é: " << codigo << endl;
+	u.setCodigo(codigo) ;
 
 	cout << "Confirmar cadastastro[S/n]? ";
 	cin >> opcao;
@@ -121,15 +127,17 @@ void cadastro() {
 	if(opcao == 'S') {
 
 		cout << "Usuário cadastrado..." << endl;
+		v.push_back(u) ;
 		cout << "Faça login para continuar" << endl;
 		/** A CONTINUAR..  */ 
 
-	} else {
+	} 
+	else {
 		cout << "Todo as informações inseridas serão perdidas" << endl;
 		cout << "Precione enter para continuar " << endl;
 		cin.ignore().get();
 		system("sleep 2");
-		loja();
+		loja(v);
 	}
 }
 
