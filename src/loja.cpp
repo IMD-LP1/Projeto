@@ -42,7 +42,7 @@ void loja(vector<Usuario>& v) {
 		}
 			else {
 				cout << "Login já efetuado:\n";
-				loja();
+				loja(v);
 				break;
 			}
 
