@@ -18,6 +18,8 @@ using std::string;
 
 #include "loja.hpp"
 #include "funcoes.hpp"
+#include "store.hpp"
+
 
 int main() {
 

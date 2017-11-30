@@ -14,6 +14,8 @@
 #include <iostream>
 using namespace std;
 
+#include "produtos.hpp"
+
 
 class Store : public Produto{
 private:
@@ -23,7 +25,7 @@ private:
 
 public:
 	Store();
-	void alocaProdutos;
+	void alocaProdutos();
 	void inserirProduto();
 	void buscarProduto(string codigo);
 	bool escrever(ostream& out) const;

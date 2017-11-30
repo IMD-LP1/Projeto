@@ -118,6 +118,7 @@ void cadastro() {
 
 	if(opcao == 'S') {
 		cout << "Usuário cadastrado..." << endl;
+		
 		cout << "Faça login para continuar" << endl;
 	} else {
 		cout << "Todo as informações inseridas seram perdidas" << endl;

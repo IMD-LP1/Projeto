@@ -57,17 +57,6 @@ public:
 	
 };
 
-class Store : public Produto{
-private:
-public:
-	void inserirProduto();
-	string buscarProduto(string codigo);
-	void escrever(std::ostream& out) const;
-	void atualizarDataBase();
-	void salvarBase();
-	void carregarBase();
-	
-};
 
 
 //ostream& operator<<(ostream& out, const CadastroProdutos& a);

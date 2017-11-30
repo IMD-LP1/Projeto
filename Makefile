@@ -35,6 +35,9 @@ E-Commerce: $(OBJ_DIR)/data.o $(OBJ_DIR)/produtos.o $(OBJ_DIR)/usuario.o $(OBJ_D
 $(OBJ_DIR)/data.o: $(SRC_DIR)/data.cpp $(INC_DIR)/data.hpp
 	$(CC) -c $(CPPFLAGS) -o $@ $<
 
+$(OBJ_DIR)/store.o: $(SRC_DIR)/store.cpp $(INC_DIR)/store.hpp 
+	$(CC) -c $(CPPFLAGS) -o $@ $<
+
 $(OBJ_DIR)/produtos.o: $(SRC_DIR)/produtos.cpp $(INC_DIR)/produtos.hpp $(INC_DIR)/data.hpp $(INC_DIR)/loja.hpp
 	$(CC) -c $(CPPFLAGS) -o $@ $<
 
