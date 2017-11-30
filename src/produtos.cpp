@@ -24,11 +24,10 @@ Produto::Produto() {
 	this->codigo_ = 0 ; 
 	this->quantidade_ = 0 ; 
 	this->valor_ = 0 ;
-	Data d(0,0,0) ; 
-	this->dataF_ = d ;
+	this->dataF_ = "";
 }
 /* @details	construtor paramentrizado da classe produtos */
-Produto::Produto(string nome, float preco, string marca, string condicao, int codigo, int quantidade, float valor, Data data) {
+Produto::Produto(string nome, float preco, string marca, string condicao, int codigo, int quantidade, float valor, string data) {
 	this->nome_ = nome;
 	this->preco_ = preco;
 	this->marca_ = marca;
@@ -101,7 +100,7 @@ int Produto::getQuantidade() {
 }
 
 
-void Produto::setFabricacao(Data d) { 
+void Produto::setFabricacao(string d) { 
 	this->dataF_ = d ;	
 }
 

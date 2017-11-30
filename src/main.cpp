@@ -33,7 +33,7 @@ using std::ostream ;
  * @brief	função principal
  */
 int main() {
-
+	system("clear");
 	cout << "Iniciando sistema";
 	progresso(3);
 	cout << "[OK]" << endl;

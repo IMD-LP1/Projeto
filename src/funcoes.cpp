@@ -42,12 +42,10 @@ void salvarUsuarios (vector<Usuario>& v) {
 		cerr << "O programa sera encerrado" << endl ;
 		exit(1) ;
 	}
-	
-	for (vector<Usuario>::iterator it = v.begin() ; it != v.end() ; it++) {
-		cout << *it << endl ;
-		saida << *it << endl ;
-	} 
-	 
+	for (Usuario i : v) {
+		cout << i << endl ;
+		saida << i << endl ;
+	}
 	saida.close() ;
 }
 
@@ -58,15 +56,10 @@ void salvarProdutos (vector<Produto>& p) {
 		cerr << "O programa sera encerrado" << endl ;
 		exit(1) ;
 	}
-	
-	for (vector<Produto>::iterator it = p.begin() ; it != p.end() ; it++) {
-		cout << *it << endl ;
-		saida << *it << endl ;
-	}
-	/*for (Produto i : p) {
+	for (Produto i : p) {
 		cout << i << endl ;
 		saida << i << endl ;
-	} */
+	} 
 	saida.close() ;
 }
 

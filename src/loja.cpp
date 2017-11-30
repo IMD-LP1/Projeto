@@ -15,20 +15,39 @@
  * @param	v vector com os dados do usuario
  * @param	p vetor com os dadso do produto
  */
+
+void menu(int n) {
+	system("clear");
+	if(n == 1) {
+		cout << "+-----------------------------------------+" << endl;
+		cout << "\tE-Commerce" << endl;
+		cout << "1-Login" << endl;
+		cout << "2-Cadastrar" << endl;
+		cout << "3-Buscar" << endl;
+		cout << "4-Vender" << endl;
+		cout << "5-Ver todos produtos disponíveis" << endl;
+		cout << "0-sair" << endl;
+		cout << "+-----------------------------------------+" << endl;
+	}
+	if(n == 2) {
+		cout << "+-----------------------------------------+" << endl;
+		cout << "\tE-Commerce" << endl;
+		cout << "3-Buscar" << endl;
+		cout << "4-Vender" << endl;
+		cout << "5-Ver todos produtos disponíveis" << endl;
+		cout << "0-sair" << endl;
+		cout << "+-----------------------------------------+" << endl;
+	}
+}
+
 void loja(vector<Usuario>& v ,vector<Produto>& p ) {
 	
 	int n;
 	int varlogin = 0;
 	system("clear");
-
-	cout << "\tE-Commerce" << endl;
-	cout << "1-Login" << endl;
-	cout << "2-Cadastrar" << endl;
-	cout << "3-Buscar" << endl;
-	cout << "4-Vender" << endl;
-	cout << "5-Ver todos produtos disponíveis" << endl;
-	cout << "0-sair" << endl;
 	
+	menu(1);
+	cout << "+-----------------------------------------+" << endl;
 	cin >> n;
 	
 	while(n < 0 or n > 4) {
@@ -42,7 +61,7 @@ void loja(vector<Usuario>& v ,vector<Produto>& p ) {
 		case 1:
 			if(varlogin == 0) {
 				//ut << "Efetuar login:" << endl;
-				login(v);
+				login(v, p);
 				varlogin++;
 				break;
 			} else {
@@ -106,17 +125,19 @@ void buscar() {
 /*
  * @brief	Função para realizar o login do usuário
  */
-void login() {
+void login(vector<Usuario>& v ,vector<Produto>& p ) {
 
 
 	string nome;
 	string senha;
 	string senhaAUX = "";
-	while(senhaAUX == "")
-	{
-		cout << "Usuário: ";
-		cin >> nome;      		
-		senhaAUX = verificaUsuario(v,nome,1); 	// 1 = CASO LOGIN.
+	cout << "Usuário: ";
+	cin >> nome;      		
+	senhaAUX = verificaUsuario(nome,1); 	// 1 = CASO LOGIN.
+	if(senhaAUX == "") {
+		system("sleep 2");
+		cout << "Usuário não cadastrado" << endl;
+		loja(v, p);
 	}
 	//IMPLEMENTAR METODO PARA BUSCAR USUARIO POR EMAIL OU CODIGO
 	// CASO O USUARIO NÃO EXISTA MOSTRAR E COLOCAR OPÇÃO DE CADASTRAR DO CONTRARIO CONTUNUAR
@@ -129,7 +150,7 @@ void login() {
 
 	}
 
-	cout << "OK!\n";  
+	menu(2); 
 	//VERIFICAR SE SENHA CORREMPONDO COM A CADASTRADA CASO CONTRARIO PEDIR PARA O USUARIO TENTAR
 	//NOVAMENTE CASO ELE ERRE 3 VEZES INFORMAR QUE ELE DEVE ENTRAR EM CONTATO COM O SUPORTE
 	// SE TUDO FOI OK FAZER LOGIN NO SISTEMA 
@@ -169,6 +190,10 @@ void cadastro(vector<Usuario> &v ,vector<Produto> &p ) {
 	cin >> usuario;
 	u.setEmail(usuario) ;
 
+	cout << "Senha: ";
+	cin >> nome;
+	u.setSenha(nome);
+
 	cout << "Telefone: " ;
 	cin >> telefone ;
 	u.setTelefone(telefone) ;
@@ -186,8 +211,9 @@ void cadastro(vector<Usuario> &v ,vector<Produto> &p ) {
 
 		cout << "Usuário cadastrado..." << endl;
 		v.push_back(u) ;
+		system("sleep 2");
 		cout << "Faça login para continuar" << endl;
-		/** A CONTINUAR..  */ 
+		loja(v, p);
 
 	} 
 	else {
@@ -203,9 +229,9 @@ void cadastro(vector<Usuario> &v ,vector<Produto> &p ) {
  * @brief	Função responsavel pela venda de produtos
  */
 void vender()  { 
-	string nome, marca, condicao ;
-	float preco  ;
-	int quantidade , dia , mes , ano ;
+	string nome, marca, condicao , data, codigo;
+	float preco ;
+	int quantidade ;
 	Produto p ;
 	// LEMBRAR TAMBEM DE ALTERAR A CLASSE PRODUTO, PARA ESSAS DESCRIÇOES ACIMA.
 	cout << "Digite os dados do produto abaixo:\n";
@@ -213,24 +239,18 @@ void vender()  {
 
 	cout << "Nome: ";
 	cin >> nome;
-	p.setNome(nome) ;
+	p.setNome(nome);
+
 	cout << "Preço: ";
 	cin >> preco;
-	p.setPreco(preco) ;
+	p.setPreco(preco);
 
 	cout << "Código produto: ";
-	// METODO QUE VAI CONSEGUIR O CODIGO DO PRODUTO.
-	p.setCodigo(0000) ;
+	p.setCodigo(gerarCodigo(codigo)) ;
 	
 	cout << "Data de fabricacao " << endl ;
-	cout << "Dia: ";
-	cin >> dia ;
-	cout << "Mes: ";
-	cin >> mes ;
-	cout << "Ano: ";
-	cin >> ano ;
-	Data d(dia,mes,ano) ;
-	p.setFabricacao(d) ;
+	cin >> data;
+	p.setFabricacao(data) ;
 	//cout << "Validade (Caso não possua, digite (NONE)) : ";
 	//cin >> validade;
 
@@ -264,25 +284,27 @@ void vender()  {
  * @param	usuario string contendo o nome de usuario
  * @param 	n variavel para indicar o que buscar de usuário
  */
-string verificaUsuario(string usuario, int n) {
-	/*std::ifstream file("./database/usuarios.txt");
+
+string verificaUsuario(string user, int n) {
+	std::ifstream file("./database/usuarios.txt");
 	 if(!file.is_open())
 	 {
 	 	cout << "ERRO: Programa não conseguiu verificar os usuarios\n";
 	 	exit(EXIT_FAILURE);
 	 }
 		 while (!file.eof()){
-		 	  	 string line, user, senha, nome, idade, dataNascimento;
+		 	  	 string line, usuario, cpf, senha, nome, idade, telefone, codigo;
 			 	 getline(file, line);
 			 	 std::istringstream iss(line);
-			 	 iss >> user;
-			 	 iss >> senha;
 			 	 iss >> nome;
 			 	 iss >> idade;
-			 	 iss >> dataNascimento;
-			 	  
+			 	 iss >> cpf;
+			 	 iss >> usuario;
+			 	 iss >> senha;
+			 	 iss >> telefone;
+			 	 iss >> codigo;
 			 	 if(n == 1 && user == usuario) { return senha; }
-		 } */
+		 } 
 
 	string senha ;
 	for (vector<Usuario>::iterator it = v.begin() ; it != v.end() ; it++) {

@@ -30,7 +30,7 @@ using std::string;
 #include "usuario.hpp"
 
 void loja(vector<Usuario>& v , vector<Produto>& p);
-void login(vector<Usuario> &v);
+void login(vector<Usuario>& v , vector<Produto>& p);
 void cadastro(vector<Usuario>& v , vector<Produto>& p);
 void buscar();
 void vender();
