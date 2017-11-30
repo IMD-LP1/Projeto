@@ -80,7 +80,7 @@ ostream& operator<<(ostream& os, Usuario &u) {
 istream& operator>>(istream& is, Usuario &u) {
 	is >> u.getNome() >> u.getIdade() >> u.getCPF() >> u.getData() >> u.getEmail() >> u.getCodigo() >> u.getSenha() >> u.getTelefone() ;
 	return is ;
-} 
+} */
 
 
 

@@ -103,14 +103,11 @@ void buscar() {
 
 }
 
-<<<<<<< HEAD
-void login(vector<Usuario> &v) {
-=======
 /*
  * @brief	Função para realizar o login do usuário
  */
 void login() {
->>>>>>> 8c2c112ffe2b15e6042e12cce8f821243cb9b349
+
 
 	string nome;
 	string senha;
