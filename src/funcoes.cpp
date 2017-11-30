@@ -36,9 +36,9 @@ int gerarCodigo(string nome) {
 }
 
 void salvarUsuarios (vector<Usuario>& v) {
-	ofstream saida("./database/usuario.txt") ;
+	ofstream saida("./database/usuarios.txt") ;
 	if(saida.bad() || !saida || (saida.is_open() == 0)) {
-		cerr << "O arquivo usuario.txt nao abriu corretamente" << endl ;
+		cerr << "O arquivo usuarios.txt nao abriu corretamente" << endl ;
 		cerr << "O programa sera encerrado" << endl ;
 		exit(1) ;
 	}
@@ -52,7 +52,7 @@ void salvarUsuarios (vector<Usuario>& v) {
 }
 
 void salvarProdutos (vector<Produto>& p) {
-	ofstream saida("./database/produtos.txt") ;
+	ofstream saida("../database/produtos.txt") ;
 	if(saida.bad() || !saida || (saida.is_open() == 0)) {
 		cerr << "O arquivo produtos.txt nao abriu corretamente" << endl ;
 		cerr << "O programa sera encerrado" << endl ;
@@ -72,19 +72,18 @@ void salvarProdutos (vector<Produto>& p) {
 
 
 void carregarUsuarios (vector<Usuario>& v) {
-	ifstream entrada("./database/usuario.txt") ;
+	ifstream entrada("./database/usuarios.txt") ;
 	if(entrada.bad() || !entrada || (entrada.is_open() == 0)) {
-		cerr << "O arquivo usuario.txt nao abriu corretamente" << endl ;
+		cerr << "O arquivo usuarios.txt nao abriu corretamente" << endl ;
 		cerr << "O programa sera encerrado" << endl ;
 		exit(1) ;
 	}
 
-	string nome , cpf , senha , usuario, telefone ;
+	string nome , cpf , senha , usuario, telefone , data;
 	int idade , codigo ;
-	Data d ;
 	while (!entrada.eof()) {
-		entrada >> nome >> idade >> cpf >> d >> usuario >> codigo >> senha >> telefone  ;
-		Usuario u(nome,idade,cpf,d,usuario,codigo,senha, telefone) ;		
+		entrada >> nome >> idade >> cpf >> data >> usuario >> codigo >> senha >> telefone  ;
+		Usuario u(nome,idade,cpf,data,usuario,codigo,senha, telefone) ;		
 		v.push_back(u) ; 
 	}
 	entrada.close() ;

@@ -1,7 +1,3 @@
-Nome	Preço	Marca	Condição	Codigo	Quantidade	Valor	Fabricação		Descrição	Vendedor
 IPhone	2000,00 Apple Usado P001512-E	12/08/2014	1 	2000,00		20/03/2013 	V001474-F
 Televisor	3520,30	P001506-E	28/02/2017	None	LG	Eletronico	Novo	200	Smart TV LG 4k 50" 	V001265-J
 Faqueiro Búzio	38,99	P001216-D	16/12/2015	None	Tramontina	Domestico 	Novo	1000	Faqueiro em inox. Modelo Malibu. Contém 20 peças, sendo: 4 facas para churrasco. 4 garfos de mesa.	V001643-J
-
-E = eletronico
-D = domestico
