@@ -21,7 +21,7 @@ Produto::Produto() {
 	this->preco_ = 0.0; 
 	this->marca_ = "" ; 
 	this->condicao_ = "" ; 
-	this-> codigo_ = 0 ; 
+	this->codigo_ = 0 ; 
 	this->quantidade_ = 0 ; 
 	this->valor_ = 0 ;
 	Data d(0,0,0) ; 

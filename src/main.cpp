@@ -37,8 +37,8 @@ int main() {
 	cout << endl;
 	vector<Usuario> vu;
 	vector<Produto> vp;
-	carregarUsuarios(vu);
-	carregarProdutos(vp) ;
+	//carregarUsuarios(vu);
+	//carregarProdutos(vp) ;
 
 	loja(vu, vp);
 

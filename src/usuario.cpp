@@ -50,10 +50,7 @@ void Usuario::setEmail(const string email) {this->email_ = email;}
 string Usuario::getEmail() {return email_;}
 
 void Usuario::setCodigo(const int codigo) {this->codigo_ = codigo;}
-int Usuario::getCodigo()	 {return codigo_;}
+int Usuario::getCodigo() {return codigo_;}
 
 void Usuario::setSenha(const string senha) {this->senha_ = senha;}
 string Usuario::getSenha() {return senha_;}
-
-
-
