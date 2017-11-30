@@ -7,7 +7,7 @@
  * @sa		jogador.hpp
  */
 #include "loja.hpp"
-
+#include "funcoes.hpp"
 void loja() {
 	
 	int n;
@@ -57,9 +57,7 @@ void buscar() {
 	
 	cout << "O que deseja buscar: ";
 	cin >> produto;
-	
-	
-	//buscarProduto(produto);
+	buscarProduto(produto);
 
 }
 
@@ -166,7 +164,67 @@ string verificaUsuario(string usuario, int n)
 		 }
 
 
-	 return "";
+	return "";
+
 
 
 }
+
+
+
+void buscarProduto(string n)
+{
+	transform(n.begin(), n.end(), n.begin(), ::toupper); // TRANSFORMA O NOME DO PROUTO PARA MAISCULO.
+	string aux;
+	string aux2;
+
+	aux[0] = n[0];						// ATRIBUI AS 3 PRIMEIRAS LETRAS PARA UMA AUXILIAR.
+	aux[1] = n[1];
+	aux[2] = n[2];
+	
+	std::ifstream file("produtos.txt");
+	if(!file.is_open())
+	 {
+	 	cout << "ERRO: Programa não conseguiu encontrar o arquivo txt\n";
+	 }
+
+	  while (!file.eof()){
+	  			 string line, nome, preco, codigo, fabricacao, validade, marca, tipo, condicao, quantidade, descricao, vendedor;
+	  			 getline(file, line);
+	  			 std::transform(line.begin(), line.end(), line.begin(), ::toupper);
+			 	 
+			 	 std::istringstream iss(line);
+			 	 iss >> nome;
+			 	 iss >> preco;
+			 	 iss >> codigo;
+			 	 iss >> fabricacao;
+			 	 iss >> validade;
+			 	 iss >> marca;
+			 	 iss >> tipo;
+			 	 iss >> condicao;
+			 	 iss >> quantidade;
+			 	 iss >> vendedor;
+			 	 if(!nome.empty()) {
+					aux2[0] = nome[0];		// ADICIONA OS 3 PRIMEIROS NOME DE UM PRODUTO "X" A OUTRA AUXILIAR.
+					aux2[1] = nome[1];
+					aux2[2] = nome[2];
+			 	 }
+			 	 
+			 	 if(aux[0] == aux2[0] && aux[1] == aux2[1] && aux[2] == aux2[2]) 		// SE AS 3 PRIMEIRAS LETRAS DO PRODUTO  QUE ELE DIGITOU FOR IGUAL AS 3 PRIMEIRAS DO PRODUTO 'X'
+			 	 																		// A DESCRICAO DESSES PRODUTOS.
+			 	 {
+			 	 cout << "Nome: " << nome << endl;
+			 	 cout << "Preco: " << preco << endl;
+			 	 cout << "Codigo: " << codigo << endl;
+			 	 cout << "Fabricacao: " << fabricacao << endl;
+			 	 cout << "Validade: " << validade << endl;
+			 	 cout << "Marca: " << marca << endl;
+			 	 cout << "Tipo: " << tipo << endl;
+			 	 cout << "Condicao: " << condicao << endl;
+			 	 cout << "Quantidade: " << quantidade << endl;
+			 	 cout << "Vendedor: " << vendedor << endl;
+			 	 cout << "-----------------------" << endl;
+			 	}
+	}
+}
+ 
