@@ -131,16 +131,67 @@ void cadastro() {
 	}
 }
 
-void vender() {
+void vender() 
+{ 	// LEMBRANDO QUE TUDO ESTA COMO STRING POR ENQUANTO.
+	string nome, codigoProd, fabricacao,preco, validade, marca, tipo, condicao, quantidade, Codvendedor;
+	// LEMBRAR TAMBEM DE ALTERAR A CLASSE PRODUTO, PARA ESSAS DESCRIÇOES ACIMA.
+	cout << "Digite os dados do produto abaixo:\n";
+	
 
-	// VERIFICAR COMO O USUARIO ESTA LOGADO
-	//if(userLogin) {
-		//inserirProduto();
-	//} else {
-		cout << "É necessario criar uma conta...!" << endl;
-		system("sleep 2");
-		loja();
-	//}
+	cout << "Nome: ";
+	cin >> nome;
+
+	cout << "Preço: ";
+	cin >> preco;
+
+	cout << "Código produto: ";
+	// METODO QUE VAI CONSEGUIR O CODIGO DO PRODUTO.
+
+	cout << "Data de fabricacao: ";
+	cin >> fabricacao;
+
+	cout << "Validade (Caso não possua, digite (NONE)) : ";
+	cin >> validade;
+
+	cout << "Marca: ";
+	cin >> marca;
+
+	cout << "Tipo: ";
+	cin >> tipo;
+
+	cout << "Condicao (novo/usador) : ";
+	cin >> condicao;
+
+	cout << "Quantidade: ";
+	cin >> quantidade;
+
+	cout << "Código do vendedor: ";
+	// METODO QUE VAI CONSEGUIR CODIGO DO VENDEDOR.
+
+	std::ofstream out;
+	out.open("produtos2.txt", std::ofstream::app);
+	// ADICIONA TUDO NO TXT COM UM ESPAÇO ENTRE AS PALAVRAS.
+	out << nome;
+	out << " ";
+	out << preco;
+	out << " ";
+	out << codigoProd;
+	out << " ";
+	out << fabricacao;
+	out << " ";
+	out << validade;
+	out << " ";
+	out << marca;
+	out << " ";
+	out << tipo;
+	out << " ";
+	out << condicao;
+	out << " ";
+	out << quantidade;
+	out << " ";
+	out << "\n";
+	
+
 }
 
 string verificaUsuario(string usuario, int n)
@@ -164,12 +215,9 @@ string verificaUsuario(string usuario, int n)
 		 }
 
 
-	return "";
-
-
+	 return "";
 
 }
-
 
 
 void buscarProduto(string n)
@@ -225,6 +273,5 @@ void buscarProduto(string n)
 			 	 cout << "Vendedor: " << vendedor << endl;
 			 	 cout << "-----------------------" << endl;
 			 	}
-	}
+			 	}
 }
- 
