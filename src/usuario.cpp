@@ -70,14 +70,16 @@ string Usuario::getSenha() {return senha_;}
 void Usuario::setTelefone(const string telefone) {this->telefone_ = telefone;}
 string Usuario::getTelefone() {return telefone_ ;}
 
-/*ostream& operator<<(ostream& os, Usuario &u) {
-	os << u.nome_ << "	" << u.idade_ << "	" << u.CPF_ << "	" << u.data_ << "	" << u.usuario_ << "	" << u.codigo_ 
-	<< "	" << u.senha_ << u.telefone_ << endl ;
+ostream& operator<<(ostream& os, Usuario &u) {
+	os << u.getNome() << "	" << u.getIdade() << "	" << u.getCPF() << "	" << u.getData() << "	" << u.getEmail() << "	" << u.getCodigo() 
+	<< "	" << u.getSenha() << " " << u.getTelefone() << endl ;
 	return os ;
 } 
 
 istream& operator>>(istream& is, Usuario &u) {
-	is >> u.nome_ >> u.idade_ >> u.CPF_ >> u.data_ >> u.usuario_ >> u.codigo_ >> u.senha_ >> u.telefone_ ;
+	is >> u.getNome() >> u.getIdade() >> u.getCPF() >> u.getData() >> u.getEmail() >> u.getCodigo() >> u.getSenha() >> u.getTelefone() ;
 	return is ;
-} */
+} 
+
+
 

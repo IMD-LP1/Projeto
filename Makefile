@@ -44,7 +44,7 @@ $(OBJ_DIR)/produtos.o: $(SRC_DIR)/produtos.cpp $(INC_DIR)/produtos.hpp $(INC_DIR
 $(OBJ_DIR)/usuario.o: $(SRC_DIR)/usuario.cpp $(INC_DIR)/usuario.hpp $(INC_DIR)/data.hpp
 	$(CC) -c $(CPPFLAGS) -o $@ $<
 
-$(OBJ_DIR)/funcoes.o: $(SRC_DIR)/funcoes.cpp $(INC_DIR)/funcoes.hpp
+$(OBJ_DIR)/funcoes.o: $(SRC_DIR)/funcoes.cpp $(INC_DIR)/funcoes.hpp 
 	$(CC) -c $(CPPFLAGS) -o $@ $<
 
 $(OBJ_DIR)/loja.o: $(SRC_DIR)/loja.cpp $(INC_DIR)/loja.hpp $(INC_DIR)/funcoes.hpp $(INC_DIR)/produtos.hpp

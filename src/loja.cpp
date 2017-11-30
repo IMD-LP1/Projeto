@@ -37,7 +37,7 @@ void loja(vector<Usuario>& v ,vector<Produto>& p ) {
 		case 1:
 			if(varlogin == 0) {
 				//ut << "Efetuar login:" << endl;
-				login();
+				login(v);
 				varlogin++;
 				break;
 			} else {
@@ -96,7 +96,7 @@ void buscar() {
 
 }
 
-void login() {
+void login(vector<Usuario> &v) {
 
 	string nome;
 	string senha;
@@ -105,7 +105,7 @@ void login() {
 	{
 		cout << "Usuário: ";
 		cin >> nome;      		
-		senhaAUX = verificaUsuario(nome,1); 	// 1 = CASO LOGIN.
+		senhaAUX = verificaUsuario(v,nome,1); 	// 1 = CASO LOGIN.
 	}
 	//IMPLEMENTAR METODO PARA BUSCAR USUARIO POR EMAIL OU CODIGO
 	// CASO O USUARIO NÃO EXISTA MOSTRAR E COLOCAR OPÇÃO DE CADASTRAR DO CONTRARIO CONTUNUAR
@@ -232,9 +232,9 @@ void vender()
 
 }
 
-string verificaUsuario(string usuario, int n)
+string verificaUsuario(vector<Usuario> &v, string user, int n)
 {
-	std::ifstream file("./database/usuarios.txt");
+	/*std::ifstream file("./database/usuarios.txt");
 	 if(!file.is_open())
 	 {
 	 	cout << "ERRO: Programa não conseguiu verificar os usuarios\n";
@@ -249,8 +249,16 @@ string verificaUsuario(string usuario, int n)
 			 	 iss >> nome;
 			 	 iss >> idade;
 			 	 iss >> dataNascimento;
+			 	  
 			 	 if(n == 1 && user == usuario) { return senha; }
-		 }
+		 } */
+
+	string senha ;
+	for (vector<Usuario>::iterator it = v.begin() ; it != v.end() ; it++) {
+		if (it->getNome() == user) {
+			return it->getSenha() ;
+		}
+	}
 
 
 	 return "";

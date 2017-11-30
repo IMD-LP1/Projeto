@@ -40,7 +40,7 @@ int main() {
 	cout << endl;
 	vector<Usuario> vu;
 	vector<Produto> vp;
-	//vu[0](talles, 21, 333333, 23 02 1996, talles17, 1239213 ,123456)
+	//vu[0]("talles", 21, 333333, d, "talles17", 1239213 ,123456, 992890121) ;
 	//carregarUsuarios(vu);
 	//cout << vu[0] << endl ;
 	//carregarProdutos(vp) ;

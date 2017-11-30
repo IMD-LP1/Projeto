@@ -30,11 +30,11 @@ using std::string;
 #include "usuario.hpp"
 
 void loja(vector<Usuario>& v , vector<Produto>& p);
-void login();
+void login(vector<Usuario> &v);
 void cadastro(vector<Usuario>& v , vector<Produto>& p);
 void buscar();
 void vender();
-string verificaUsuario(string usuario, int n);
+string verificaUsuario(vector<Usuario> &v, string user, int n);
 void buscarProduto(string n);
 void ImprimeTodos();
 

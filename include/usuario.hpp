@@ -19,6 +19,8 @@ using std::istream ;
 #include <ostream>
 using std::ostream ;
 
+#include <iostream>
+using std::endl ;
 
 /**
  * @class   Pessoa
