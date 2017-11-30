@@ -91,36 +91,41 @@ void login() {
 
 void cadastro() {
 
-	int n;
 	char opcao;
 	string nome;
+	string CPF;
+	string idade;
+	string email;
+	int codigo;
 
-	cout << "Informe seu nome completo: ";
-	cin.ignore();
-	getline(cin, nome);
+	cout << "Informe seu primeiro nome: ";
+	cin >> nome;
 
 	cout << "Informe sua idade: ";
-	cin >> n;
+	cin >> idade;
 	cout << "Informe seu CPF: ";
-	cin >> nome;
+	cin >> CPF;
 	//VERIFICAR SE JÁ EXISTE CPF CADASTRADO CASO EXISTA INFORMAR QUE O CPF ESTÁ CADASTRADO
-	cout << "Nascimento: ";
+	//cout << "Nascimento: ";
 
 	cout << "E-mail: ";
-	cin >> nome;
+	cin >> email;
 	// VERIFICAR SE JÁ EXITE EMAIL CADASTRADO CASO EXISTA INFORMA QUE JÁ EXISTE O MESMO EMAIL CADASTRADO
-
+	codigo = gerarCodigo(nome);	
 	// SE TUDO OK GERAR CODIGO DE USUARIO
-	//cout << codigoUsuario() << endl;
+	cout << "Seu codigo de usuario é: " << codigo << endl;
 
 	cout << "Confirmar cadastastro[S/n]? ";
 	cin >> opcao;
 
 	if(opcao == 'S') {
+
 		cout << "Usuário cadastrado..." << endl;
 		cout << "Faça login para continuar" << endl;
+		/** A CONTINUAR..  */ 
+
 	} else {
-		cout << "Todo as informações inseridas seram perdidas" << endl;
+		cout << "Todo as informações inseridas serão perdidas" << endl;
 		cout << "Precione enter para continuar " << endl;
 		cin.ignore().get();
 		system("sleep 2");

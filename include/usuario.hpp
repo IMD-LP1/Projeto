@@ -23,6 +23,7 @@ private:
 	int idade_;
 	string CPF_;
 	Data data_;
+	Usuario usuarioss;
 
 public:
 
