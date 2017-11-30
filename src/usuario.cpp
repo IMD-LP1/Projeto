@@ -11,11 +11,11 @@
 #include "usuario.hpp"
 
 Pessoa::Pessoa() {
-	Data d(0,0,0) ;
-	this->nome_ = "", this->idade_ = 0 , this->CPF_ = "", this->data_ = d;
+	//Data d(0,0,0) ;
+	this->nome_ = "", this->idade_ = 0 , this->CPF_ = "", this->data_ = "";
 }
 
-Pessoa::Pessoa(string nome , int idade, string cpf, Data data) {
+Pessoa::Pessoa(string nome , int idade, string cpf, string data) {
 	this->nome_ = nome;
 	this->idade_ = idade;
 	this->CPF_ = cpf;
@@ -31,10 +31,10 @@ int Pessoa::getIdade() {return idade_;}
 void Pessoa::setCPF(const string cpf) {this->CPF_ = cpf;}
 string Pessoa::getCPF() {return CPF_;}
 
-void Pessoa::setData(const Data data) {this->data_ = data;}
-Data Pessoa::getData() {return data_;}
+void Pessoa::setData(const string data) {this->data_ = data;}
+string Pessoa::getData() {return data_;}
 
-/*ostream& operator<<(ostream& os, Pessoa &p) {
+ostream& operator<<(ostream& os, Pessoa &p) {
 	os << p.nome_ << "	" << p.idade_ << "	" << p.CPF_ << "	" << p.data_ << endl ;
 	return os ;
 } 
@@ -43,14 +43,14 @@ istream& operator>>(istream& is, Pessoa &p) {
 	is >> p.nome_ >> p.idade_ >> p.CPF_ >> p.data_ ;
 	return is ;
 }
-*/
+
 
 
 Usuario::Usuario() {
 	this->usuario_ = "", this->codigo_ = 0, this->senha_ = "" , this->telefone_ = "";
 }
 
-Usuario::Usuario(string nome, int idade, string cpf, Data data, string usuario, int codigo, string senha, string telefone) {
+Usuario::Usuario(string nome, int idade, string cpf, string data, string usuario, int codigo, string senha, string telefone) {
 	Pessoa {nome,idade, cpf, data};
 	this->usuario_ = usuario;
 	this->codigo_ = codigo;
@@ -70,12 +70,13 @@ string Usuario::getSenha() {return senha_;}
 void Usuario::setTelefone(const string telefone) {this->telefone_ = telefone;}
 string Usuario::getTelefone() {return telefone_ ;}
 
-/*ostream& operator<<(ostream& os, Usuario &u) {
-	os << u.nome_ << "	" << u.idade_ << "	" << u.CPF_ << "	" << u.data_ << "	" << u.usuario_ << "	" << u.codigo_ 
-	<< "	" << u.senha_ << u.telefone_ << endl ;
+ostream& operator<<(ostream& os, Usuario &u) {
+	os << u.getNome() << "	" << u.getIdade() << "	" << u.getCPF() << " " << u.getCodigo() 
+	<< "	" << u.getSenha() << u.getTelefone() << endl ;
 	return os ;
 } 
 
+/*
 istream& operator>>(istream& is, Usuario &u) {
 	is >> u.nome_ >> u.idade_ >> u.CPF_ >> u.data_ >> u.usuario_ >> u.codigo_ >> u.senha_ >> u.telefone_ ;
 	return is ;

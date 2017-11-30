@@ -1,8 +1,8 @@
 /**
  * @file	produtos.cpp
  * @brief	Implementacao dos metodos definidos na classe produto
- * @author	Fernando Rodrigues Maciel (fernandomaciel@ufrn.edu.br)
  * @author
+ * @author	Fernando Rodrigues Maciel (fernandomaciel@ufrn.edu.br)
  * @author
  * @since	16/11/2017
  * @date	25/11/2017
@@ -27,7 +27,7 @@ Produto::Produto() {
 	Data d(0,0,0) ; 
 	this->dataF_ = d ;
 }
-
+/* @details	construtor paramentrizado da classe produtos */
 Produto::Produto(string nome, float preco, string marca, string condicao, int codigo, int quantidade, float valor, Data data) {
 	this->nome_ = nome;
 	this->preco_ = preco;

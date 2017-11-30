@@ -11,10 +11,10 @@
 #ifndef _USUARIO_HPP_
 #define _USUARIO_HPP_
 
-#include "data.hpp"
-
-
 #include <istream>
+
+using namespace std;
+using std::endl;
 using std::istream ;
 #include <ostream>
 using std::ostream ;
@@ -24,18 +24,18 @@ using std::ostream ;
  * @class   Pessoa
  * @brief   Implementação de uma classe que armazena as informaçõe basicas de uma pessoa
  */
-class Pessoa : public Data{
+class Pessoa{
 private:
 	string nome_;
 	int idade_;
 	string CPF_;
-	Data data_;
+	string data_;
 	//Usuario usuarios;
 
 public:
 
 	Pessoa();
-	Pessoa(string nome, int idade, string cpf, Data data);
+	Pessoa(string nome, int idade, string cpf, string data);
 
 	string getNome();
 	void setNome(const string nome);
@@ -46,8 +46,8 @@ public:
 	string getCPF();
 	void setCPF(const string cpf);
 
-	Data getData() ;
-	void setData(const Data d) ;
+	string getData() ;
+	void setData(const string d) ;
 
 	friend ostream& operator<<(ostream& os, Pessoa &p) ;
 	friend istream& operator>>(istream& is, Pessoa &p) ;
@@ -68,7 +68,7 @@ private:
 public:
 
 	Usuario();
-	Usuario(string nome, int idade, string cpf, Data data, string usuario, int codigo, string senha, string telefone);
+	Usuario(string nome, int idade, string cpf, string data, string usuario, int codigo, string senha, string telefone);
 	void setEmail(const string usuario);
 	string getEmail();
 	void setCodigo(const int codigo);

@@ -2,7 +2,9 @@
  * @file	main.cpp
  * @brief	Sistema de E-commerce
  * @details	Sistema de comercio eletronico com suas funções basicas de compra, venda, login e cadastro
+ * @author	 
  * @author	Fernando Rodrigues Maciel (fernandomaciel@ufrn.edu.br)
+ * @author
  * @since	16/11/2017
  * @date	25/11/2017
  */
@@ -27,7 +29,9 @@ using std::ostream ;
 #include "store.hpp"
 #include "usuario.hpp"
 
-
+/*
+ * @brief	função principal
+ */
 int main() {
 
 	cout << "Iniciando sistema";
@@ -41,9 +45,9 @@ int main() {
 	vector<Usuario> vu;
 	vector<Produto> vp;
 	//vu[0](talles, 21, 333333, 23 02 1996, talles17, 1239213 ,123456)
-	//carregarUsuarios(vu);
+	carregarUsuarios(vu);
 	//cout << vu[0] << endl ;
-	//carregarProdutos(vp) ;
+	carregarProdutos(vp) ;
 
 	loja(vu, vp);
 
