@@ -16,14 +16,15 @@ void progresso(int n) {
 	cout << "]";
 }
 
-int gerarCodigo() {
+int gerarCodigo(string nome) {
 
 	srand(time(NULL));
 	int codigo;
 	//int i = 0;
 	//char code[26] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-
-	codigo = (rand() % 9999);
+	for(unsigned int i = 0; i < nome.size(); i++){
+		codigo += nome[i]*(rand() %10);
+	}
 	
 	return codigo;
 }
