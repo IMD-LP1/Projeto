@@ -2,8 +2,10 @@
  * @file	data.cpp
  * @brief	Implementacao dos metodos definidos na classe Data
  * @author	Fernando Rodrigues Maciel (fernandomaciel@ufrn.edu.br)
+ * @author	Cleydson Talles Araujo Vieira (talles17.a@hotmail.com)
+ * @author  Gabriel Queiroz de Almeida Pereira (gabrielqp@escritoriodeiluminacao.com.br)
  * @since	16/11/2017
- * @date	26/11/2017
+ * @date	30/11/2017
  * @sa		data.hpp
  */
 #include "data.hpp"

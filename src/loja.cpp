@@ -2,9 +2,11 @@
  * @file	loja.cpp
  * @brief	Implementacao das funções de inicialização do sistema
  * @author	Fernando Rodrigues Maciel (fernandomaciel@ufrn.edu.br)
- * @since	25/11/2017
- * @date	25/11/2017
- * @sa		jogador.hpp
+ * @author	Cleydson Talles Araujo Vieira (talles17.a@hotmail.com)
+ * @author  Gabriel Queiroz de Almeida Pereira (gabrielqp@escritoriodeiluminacao.com.br)
+ * @since	16/11/2017
+ * @date	30/11/2017
+ * @sa		loja.hpp
  */
 #include "loja.hpp"
 #include "funcoes.hpp"
@@ -40,6 +42,11 @@ void menu(int n) {
 	}
 }
 
+/**
+ *  @brief Funcao que da andamento ao programa 
+ *  @details v Vetor de usuarios da loja 
+ *  @details p Vetor de produtos da loja 
+ */
 void loja(vector<Usuario>& v ,vector<Produto>& p ) {
 	
 	int n;
@@ -122,8 +129,10 @@ void buscar() {
 
 }
 
-/*
- * @brief	Função para realizar o login do usuário
+/**
+ *  @brief Funcao que faz o login do usuario no programa 
+ *  @details v Vetor de usuarios da loja 
+ *  @details p Vetor de produtos da loja
  */
 void login(vector<Usuario>& v ,vector<Produto>& p ) {
 
@@ -160,7 +169,7 @@ void login(vector<Usuario>& v ,vector<Produto>& p ) {
 /*
  * @brief 	Função para realizar o cadastro de usuario
  * @param	v vector contendo lista de usuarios
- * @param	u vector contendo lista de produtos
+ * @param	p vector contendo lista de produtos
  */
 void cadastro(vector<Usuario> &v ,vector<Produto> &p ) {
 

@@ -3,9 +3,10 @@
  * @brief	Implementacao dos metodos definidos na classe produto
  * @author
  * @author	Fernando Rodrigues Maciel (fernandomaciel@ufrn.edu.br)
- * @author
+ * @author	Cleydson Talles Araujo Vieira (talles17.a@hotmail.com)
+ * @author  Gabriel Queiroz de Almeida Pereira (gabrielqp@escritoriodeiluminacao.com.br)
  * @since	16/11/2017
- * @date	25/11/2017
+ * @date	30/11/2017
  * @sa		produtos.hpp
  * @sa		loja.hpp
  */
@@ -99,7 +100,7 @@ int Produto::getQuantidade() {
 	return this->quantidade_;
 }
 
-
+/** @brief Atualiza a data de fabricaçao do produto */
 void Produto::setFabricacao(string d) { 
 	this->dataF_ = d ;	
 }

@@ -2,11 +2,11 @@
  * @file	main.cpp
  * @brief	Sistema de E-commerce
  * @details	Sistema de comercio eletronico com suas funções basicas de compra, venda, login e cadastro
- * @author	 
  * @author	Fernando Rodrigues Maciel (fernandomaciel@ufrn.edu.br)
- * @author
+ * @author	Cleydson Talles Araujo Vieira (talles17.a@hotmail.com)
+ * @author  Gabriel Queiroz de Almeida Pereira (gabrielqp@escritoriodeiluminacao.com.br)
  * @since	16/11/2017
- * @date	25/11/2017
+ * @date	30/11/2017
  */
 #include <iostream>
 using std::cout;

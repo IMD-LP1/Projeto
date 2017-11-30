@@ -3,8 +3,10 @@
  * @brief	Definicao da classe Data, que representa a informação da data do programa
  * @details	Os atributos de Data são dia, mes e ano.
  * @author	Fernando Rodrigues Maciel (fernandomaciel@ufrn.edu.br)
+ * @author	Cleydson Talles Araujo Vieira (talles17.a@hotmail.com)
+ * @author  Gabriel Queiroz de Almeida Pereira (gabrielqp@escritoriodeiluminacao.com.br)
  * @since	16/11/2017
- * @date	26/11/2017
+ * @date	30/11/2017
  */
 #ifndef _DATA_HPP_
 #define _DATA_HPP_

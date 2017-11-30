@@ -3,10 +3,11 @@
  * @brief	Definicao da classe Usuario, que representa as possiveis operações do usuario
  * @details	O usuario herda da classe pessoa.
  * @author	Fernando Rodrigues Maciel (fernandomaciel@ufrn.edu.br)
- * @author
- * @author
+ * @author	Fernando Rodrigues Maciel (fernandomaciel@ufrn.edu.br)
+ * @author	Cleydson Talles Araujo Vieira (talles17.a@hotmail.com)
+ * @author  Gabriel Queiroz de Almeida Pereira (gabrielqp@escritoriodeiluminacao.com.br)
  * @since	16/11/2017
- * @date	26/11/2017
+ * @date	30/11/2017
  */
 #ifndef _USUARIO_HPP_
 #define _USUARIO_HPP_
@@ -35,20 +36,42 @@ private:
 	//Usuario usuarios;
 
 public:
-
+	/* @brief Construtor padrão */
 	Pessoa();
+	/* @brief Construtor parametrizado */
 	Pessoa(string nome, int idade, string cpf, string data);
 
+	
+	/*	@brief	metodo getNome da classe pessoa */
 	string getNome();
+	/**
+	 *  @brief	 metodo setNome da classe pessoa
+	 *	@details nome String a ser passada para o nome da pessoa
+	*/
 	void setNome(const string nome);
 
+	/*	@brief	metodo getIdade da classe pessoa */
 	int getIdade();
+	/**
+	 *  @brief	 metodo setIdade da classe pessoa
+	 *	@details idade Valor a ser passado para a idade da pessoa
+	*/
 	void setIdade(const int idade);
 
+	/*	@brief	metodo getCPF da classe pessoa */
 	string getCPF();
+	/**
+	 *  @brief	 metodo setCPF da classe pessoa
+	 *	@details cpf Informação a ser passado para o cpf da pessoa
+	*/
 	void setCPF(const string cpf);
 
+	/*	@brief	metodo getData da classe pessoa */
 	string getData() ;
+	/**
+	 *  @brief	 metodo setData da classe pessoa
+	 *	@details d Data a ser passada para a data de nascimento da pessoa
+	*/
 	void setData(const string d) ;
 
 	friend ostream& operator<<(ostream& os, Pessoa &p) ;
@@ -68,16 +91,41 @@ private:
 	string telefone_ ;
 
 public:
-
+	/* @brief Construtor padrão */
 	Usuario();
+	/* @brief Construtor parametrizado */
 	Usuario(string nome, int idade, string cpf, string data, string usuario, int codigo, string senha, string telefone);
-	void setEmail(const string usuario);
-	string getEmail();
+	
+	/**
+	 *  @brief	 metodo setUsuario da classe usuario
+	 *	@details usuario Login a ser passado para usuario
+	*/
+	void setUsuario(const string usuario);
+	/*	@brief	metodo getUsuario da classe pessoa */
+	string getUsuario();
+	
+	/**
+	 *  @brief	 metodo setCodigo da classe usuario
+	 *	@details codigo valor a ser passado para o codigo do usuario
+	*/
 	void setCodigo(const int codigo);
+	/*	@brief	metodo getCodigo da classe pessoa */
 	int getCodigo();
+
+	/**
+	 *  @brief	 metodo setSenha da classe usuario
+	 *	@details senha Informação a ser passada para a senha do usuario
+	*/
 	void setSenha(const string senha);
+	/*	@brief	metodo getSenha da classe pessoa */
 	string getSenha();
+
+	/**
+	 *  @brief	 metodo setTelefone da classe usuario
+	 *	@details telefone Informação a ser passada para telefone do usuario
+	*/
 	void setTelefone(const string telefone) ;
+	/*	@brief	metodo getTelefone da classe pessoa */
 	string getTelefone () ;
 	friend ostream& operator<<(ostream& os, Usuario &u) ;
 	friend istream& operator>>(istream& is, Usuario &u) ;
