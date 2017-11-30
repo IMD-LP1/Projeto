@@ -120,9 +120,13 @@ void login() {
 	}
 	//IMPLEMENTAR METODO PARA BUSCAR USUARIO POR EMAIL OU CODIGO
 	// CASO O USUARIO NÃO EXISTA MOSTRAR E COLOCAR OPÇÃO DE CADASTRAR DO CONTRARIO CONTUNUAR
-	while(senha != senhaAUX){
+	while(senha != senhaAUX ){
 		cout << "Senha: ";
 		cin >> senha;
+		if(senha != senhaAUX){
+			cout << "Senha incorreta!\n";
+		}
+
 	}
 
 	cout << "OK!\n";  
@@ -150,6 +154,10 @@ void cadastro(vector<Usuario> &v ,vector<Produto> &p ) {
 
 	cout << "Informe sua idade: ";
 	cin >> idade;
+	while (idade < 0) {
+		cout << "Digite uma idade acima de 0." ;
+		cin << idade ;
+	}
 	u.setIdade(idade) ;
 	cout << "Informe seu CPF: ";
 	cin >> CPF;
