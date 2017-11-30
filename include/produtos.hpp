@@ -6,14 +6,15 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+#include <string>
+using std::string;
+
 #include <istream>
 using std::istream ;
 #include <ostream>
 using std::ostream ;
 
 #include <cctype>
-
-#include "data.hpp"
 
 /**
  * @class   Produto
@@ -28,11 +29,11 @@ private:
 	int codigo_;		//<--	Codigo do produto
 	int quantidade_;	//<--	Quantidade do produto
 	float valor_;		//<--	valor total de produtos
-	Data dataF_;		//<--	Data de fabricação do produto
+	string dataF_;		//<--	Data de fabricação do produto
 
 public:
 	Produto();	//<--	Construtor padrão
-	Produto(string nome, float preco, string marca, string condicao, int codigo, int quantidade, float valor, Data dataF);	//<--	Construtor parametrizado
+	Produto(string nome, float preco, string marca, string condicao, int codigo, int quantidade, float valor, string dataF);	//<--	Construtor parametrizado
 	
 	void setNome(const string nome);
 	string getNome();
@@ -52,7 +53,7 @@ public:
 	void setQuantidade(const int quantidade);
 	int getQuantidade();
 	
-	void setFabricacao(Data d);
+	void setFabricacao(string d);
 	string getFabricacao();
 
 	float getValorTotal();
