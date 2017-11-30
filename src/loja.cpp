@@ -13,7 +13,7 @@
 void loja() {
 	
 	int n;
-	int login;
+	int varlogin = 0;
 	system("clear");
 
 	cout << "\tE-Commerce" << endl;
@@ -21,7 +21,7 @@ void loja() {
 	cout << "2-Cadastrar" << endl;
 	cout << "3-Buscar" << endl;
 	cout << "4-Vender" << endl;
-	cout << "5-Ver todos produtos disponíveis"
+	cout << "5-Ver todos produtos disponíveis" << endl;
 	cout << "0-sair" << endl;
 	
 	cin >> n;
@@ -34,10 +34,10 @@ void loja() {
 	switch(n) {
 
 		case 1:
-			if(login == 0) {
+			if(varlogin == 0) {
 			//ut << "Efetuar login:" << endl;
 			login();
-			longin++;
+			varlogin++;
 			break;
 		}
 			else {
@@ -55,7 +55,7 @@ void loja() {
 
 
 		case 3:
-			if(login != 0) {
+			if(varlogin != 0) {
 			//cout << "Buscar Produto:" << endl;
 			buscar();
 			break;
@@ -67,7 +67,7 @@ void loja() {
 
 
 		case 4:
-			if(login != 0) {
+			if(varlogin != 0) {
 			//cout << "Vender produto:" << endl;
 			vender();
 			break;
@@ -82,7 +82,7 @@ void loja() {
 
 
 		case 5: 
-			if(login != 0) {
+			if(varlogin != 0) {
 				ImprimeTodos();
 				break;
 			}
@@ -126,7 +126,6 @@ void login() {
 	cout << "OK!\n";  
 	//VERIFICAR SE SENHA CORREMPONDO COM A CADASTRADA CASO CONTRARIO PEDIR PARA O USUARIO TENTAR
 	//NOVAMENTE CASO ELE ERRE 3 VEZES INFORMAR QUE ELE DEVE ENTRAR EM CONTATO COM O SUPORTE
-	mos
 	// SE TUDO FOI OK FAZER LOGIN NO SISTEMA 
 
 }
