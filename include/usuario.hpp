@@ -13,6 +13,13 @@
 
 #include "data.hpp"
 
+
+#include <istream>
+using std::istream ;
+#include <ostream>
+using std::ostream ;
+
+
 /**
  * @class   Pessoa
  * @brief   Implementação de uma classe que armazena as informaçõe basicas de uma pessoa
@@ -42,6 +49,9 @@ public:
 	Data getData() ;
 	void setData(const Data d) ;
 
+	friend ostream& operator<<(ostream& os, Pessoa &p) ;
+	friend istream& operator>>(istream& is, Pessoa &p) ;
+
 };
 
 /**
@@ -50,20 +60,25 @@ public:
  */
 class Usuario: public Pessoa {
 private:
-	string email_;
+	string usuario_;
 	int codigo_;
 	string senha_;
+	string telefone_ ;
 
 public:
 
 	Usuario();
-	Usuario(string nome, int idade, string cpf, Data data, string email, int codigo, string senha);
-	void setEmail(const string email);
+	Usuario(string nome, int idade, string cpf, Data data, string usuario, int codigo, string senha, string telefone);
+	void setEmail(const string usuario);
 	string getEmail();
 	void setCodigo(const int codigo);
 	int getCodigo();
 	void setSenha(const string senha);
 	string getSenha();
+	void setTelefone(const string telefone) ;
+	string getTelefone () ;
+	friend ostream& operator<<(ostream& os, Usuario &u) ;
+	friend istream& operator>>(istream& is, Usuario &u) ;
 };
 
 /**

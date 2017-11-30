@@ -81,9 +81,13 @@ void carregarUsuarios (vector<Usuario>& v) {
 		cerr << "O programa sera encerrado" << endl ;
 		exit(1) ;
 	}
-	Usuario u ;
+
+	string nome , cpf , senha , usuario, telefone ;
+	int idade , codigo ;
+	Data d ;
 	while (!entrada.eof()) {
-		entrada >> u ;
+		entrada >> nome >> idade >> cpf >> d >> usuario >> codigo >> senha >> telefone  ;
+		Usuario u(nome,idade,cpf,d,usuario,codigo,senha, telefone) ;		
 		v.push_back(u) ; 
 	}
 	entrada.close() ;

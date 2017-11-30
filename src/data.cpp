@@ -68,7 +68,7 @@ int Data::getAno() {
 } */
 
 ostream& operator<<(ostream& os, Data &d) {
-	os << d.dia_ << "/" << d.mes_ << "/" << d.ano_ ;
+	os << d.dia_ << " " << d.mes_ << " " << d.ano_ ;
 	return os ;
 }
 

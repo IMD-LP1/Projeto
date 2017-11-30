@@ -34,20 +34,32 @@ string Pessoa::getCPF() {return CPF_;}
 void Pessoa::setData(const Data data) {this->data_ = data;}
 Data Pessoa::getData() {return data_;}
 
+/*ostream& operator<<(ostream& os, Pessoa &p) {
+	os << p.nome_ << "	" << p.idade_ << "	" << p.CPF_ << "	" << p.data_ << endl ;
+	return os ;
+} 
+
+istream& operator>>(istream& is, Pessoa &p) {
+	is >> p.nome_ >> p.idade_ >> p.CPF_ >> p.data_ ;
+	return is ;
+}
+*/
+
 
 Usuario::Usuario() {
-	this->email_ = "", this->codigo_ = 0, this->senha_ = "";
+	this->usuario_ = "", this->codigo_ = 0, this->senha_ = "" , this->telefone_ = "";
 }
 
-Usuario::Usuario(string nome, int idade, string cpf, Data data, string email, int codigo, string senha) {
+Usuario::Usuario(string nome, int idade, string cpf, Data data, string usuario, int codigo, string senha, string telefone) {
 	Pessoa {nome,idade, cpf, data};
-	this->email_ = email;
+	this->usuario_ = usuario;
 	this->codigo_ = codigo;
 	this->senha_ = senha;
+	this->telefone_ = telefone ;
 }
 
-void Usuario::setEmail(const string email) {this->email_ = email;}
-string Usuario::getEmail() {return email_;}
+void Usuario::setEmail(const string usuario) {this->usuario_ = usuario;}
+string Usuario::getEmail() {return usuario_;}
 
 void Usuario::setCodigo(const int codigo) {this->codigo_ = codigo;}
 int Usuario::getCodigo()	 {return codigo_;}
@@ -55,5 +67,18 @@ int Usuario::getCodigo()	 {return codigo_;}
 void Usuario::setSenha(const string senha) {this->senha_ = senha;}
 string Usuario::getSenha() {return senha_;}
 
+void Usuario::setTelefone(const string telefone) {this->telefone_ = telefone;}
+string Usuario::getTelefone() {return telefone_ ;}
+
+/*ostream& operator<<(ostream& os, Usuario &u) {
+	os << u.nome_ << "	" << u.idade_ << "	" << u.CPF_ << "	" << u.data_ << "	" << u.usuario_ << "	" << u.codigo_ 
+	<< "	" << u.senha_ << u.telefone_ << endl ;
+	return os ;
+} 
+
+istream& operator>>(istream& is, Usuario &u) {
+	is >> u.nome_ >> u.idade_ >> u.CPF_ >> u.data_ >> u.usuario_ >> u.codigo_ >> u.senha_ >> u.telefone_ ;
+	return is ;
+} */
 
 

@@ -25,10 +25,11 @@ void loja(vector<Usuario>& v ,vector<Produto>& p ) {
 	cout << "0-sair" << endl;
 	
 	cin >> n;
-	do{	
+	
+	while(n < 0 or n > 4) {
 		cout << "Número inválido! Digite um número válido.\n";
 		cin >> n;
-	}while(n < 0 or n > 4);
+	}
  	
 	
 	switch(n) {
@@ -135,9 +136,7 @@ void login() {
 void cadastro(vector<Usuario> &v ,vector<Produto> &p ) {
 
 	char opcao;
-	string nome;
-	string CPF;
-	string email;
+	string nome , CPF , usuario , telefone;
 	int codigo , idade;
 	Usuario u ;
 
@@ -154,9 +153,14 @@ void cadastro(vector<Usuario> &v ,vector<Produto> &p ) {
 	//VERIFICAR SE JÁ EXISTE CPF CADASTRADO CASO EXISTA INFORMAR QUE O CPF ESTÁ CADASTRADO
 	//cout << "Nascimento: ";
 
-	cout << "E-mail: ";
-	cin >> email;
-	u.setEmail(email) ;
+	cout << "Usuario: ";
+	cin >> usuario;
+	u.setEmail(usuario) ;
+
+	cout << "Telefone: " ;
+	cin >> telefone ;
+	u.setTelefone(telefone) ;
+
 	// VERIFICAR SE JÁ EXITE EMAIL CADASTRADO CASO EXISTA INFORMA QUE JÁ EXISTE O MESMO EMAIL CADASTRADO
 	codigo = gerarCodigo(nome);	
 	// SE TUDO OK GERAR CODIGO DE USUARIO
