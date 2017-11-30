@@ -13,6 +13,7 @@
 void loja() {
 	
 	int n;
+	int login;
 	system("clear");
 
 	cout << "\tE-Commerce" << endl;
@@ -20,6 +21,7 @@ void loja() {
 	cout << "2-Cadastrar" << endl;
 	cout << "3-Buscar" << endl;
 	cout << "4-Vender" << endl;
+	cout << "5-Ver todos produtos disponíveis"
 	cout << "0-sair" << endl;
 	
 	cin >> n;
@@ -30,23 +32,63 @@ void loja() {
  	
 	
 	switch(n) {
+
 		case 1:
+			if(login == 0) {
 			//ut << "Efetuar login:" << endl;
 			login();
+			longin++;
 			break;
+		}
+			else {
+				cout << "Login já efetuado:\n";
+				loja();
+				break;
+			}
+
+
+
 		case 2:	
 			//ut << "Cadastrar-se:" << endl;
 			cadastro();
 			break;
+
+
 		case 3:
+			if(login != 0) {
 			//cout << "Buscar Produto:" << endl;
 			buscar();
 			break;
+		}
+			else {
+				cout << "É necessário efetuar login primeiro.\n";
+				break;
+			}
+
+
 		case 4:
+			if(login != 0) {
 			//cout << "Vender produto:" << endl;
 			vender();
+			break;
+			}
+			else {
+				cout << "É necessário efetuar login primeiro.\n";
+			}
+
+
 		case 0:
 			exit(EXIT_SUCCESS);
+
+
+		case 5: 
+			if(login != 0) {
+				ImprimeTodos();
+				break;
+			}
+			else {
+				cout << "É necessário efetuar login primeiro.\n";
+			}
 		default:
 			exit(EXIT_FAILURE);
 	}
@@ -57,7 +99,7 @@ void buscar() {
 	
 	string produto;	
 	
-	cout << "O que deseja buscar: ";
+	cout << "O nome do produto que deseja buscar: ";
 	cin >> produto;
 	buscarProduto(produto);
 
@@ -84,7 +126,7 @@ void login() {
 	cout << "OK!\n";  
 	//VERIFICAR SE SENHA CORREMPONDO COM A CADASTRADA CASO CONTRARIO PEDIR PARA O USUARIO TENTAR
 	//NOVAMENTE CASO ELE ERRE 3 VEZES INFORMAR QUE ELE DEVE ENTRAR EM CONTATO COM O SUPORTE
-
+	mos
 	// SE TUDO FOI OK FAZER LOGIN NO SISTEMA 
 
 }
@@ -134,7 +176,7 @@ void cadastro() {
 }
 
 void vender() 
-{ 	// LEMBRANDO QUE TUDO ESTA COMO STRING POR ENQUANTO.
+{ 	
 	string nome, marca, condicao ;
 	float preco  ;
 	int quantidade , dia , mes , ano ;
