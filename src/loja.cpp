@@ -10,6 +10,11 @@
 #include "funcoes.hpp"
 #include "produtos.hpp"
 
+/*
+ * @brief 	Função que inicializa a loja
+ * @param	v vector com os dados do usuario
+ * @param	p vetor com os dadso do produto
+ */
 void loja(vector<Usuario>& v ,vector<Produto>& p ) {
 	
 	int n;
@@ -86,17 +91,26 @@ void loja(vector<Usuario>& v ,vector<Produto>& p ) {
 
 }
 
+/*
+ * @brief	função para buscar itens relacionados a produtos
+ */
 void buscar() {
 	
 	string produto;	
-	
 	cout << "O nome do produto que deseja buscar: ";
 	cin >> produto;
 	buscarProduto(produto);
 
 }
 
+<<<<<<< HEAD
 void login(vector<Usuario> &v) {
+=======
+/*
+ * @brief	Função para realizar o login do usuário
+ */
+void login() {
+>>>>>>> 8c2c112ffe2b15e6042e12cce8f821243cb9b349
 
 	string nome;
 	string senha;
@@ -121,6 +135,11 @@ void login(vector<Usuario> &v) {
 
 }
 
+/*
+ * @brief 	Função para realizar o cadastro de usuario
+ * @param	v vector contendo lista de usuarios
+ * @param	u vector contendo lista de produtos
+ */
 void cadastro(vector<Usuario> &v ,vector<Produto> &p ) {
 
 	char opcao;
@@ -175,8 +194,10 @@ void cadastro(vector<Usuario> &v ,vector<Produto> &p ) {
 	}
 }
 
-void vender() 
-{ 	
+/*
+ * @brief	Função responsavel pela venda de produtos
+ */
+void vender()  { 
 	string nome, marca, condicao ;
 	float preco  ;
 	int quantidade , dia , mes , ano ;
@@ -232,8 +253,13 @@ void vender()
 
 }
 
-string verificaUsuario(vector<Usuario> &v, string user, int n)
-{
+
+/*
+ * @brief	Função que verifica o usuario
+ * @param	usuario string contendo o nome de usuario
+ * @param 	n variavel para indicar o que buscar de usuário
+ */
+string verificaUsuario(string usuario, int n) {
 	/*std::ifstream file("./database/usuarios.txt");
 	 if(!file.is_open())
 	 {
@@ -260,12 +286,14 @@ string verificaUsuario(vector<Usuario> &v, string user, int n)
 		}
 	}
 
-
 	 return "";
 
 }
 
-
+/*
+ * @brief 	Bucar produto pelo nome
+ * @param	n string contendo o nome do produto a ser buscado
+ */
 void buscarProduto(string n)
 {
 	transform(n.begin(), n.end(), n.begin(), ::toupper); // TRANSFORMA O NOME DO PROUTO PARA MAISCULO.
@@ -323,8 +351,10 @@ void buscarProduto(string n)
 			 	}
 }
 
-void ImprimeTodos()
-{
+/*
+ * @brief	Função para imprimir todos os funcionario
+ */
+void ImprimeTodos() {
 
 	std::ifstream file("./database/produtos.txt");
 	if(!file.is_open())
