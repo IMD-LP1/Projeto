@@ -119,8 +119,8 @@ float Produto::getValorTotal() {
 }
 
 ostream& operator<<(ostream& os, Produto &p) {
-	os << p.nome_ << ";" << p.preco_ << ";" << p.marca_ << ";" << p.codigo_ << ";" << p.quantidade_ << ";" << p.getValorTotal() 
-	<< ";" << p.dataF_ << endl ;
+	os << p.nome_ << "	" << p.preco_ << "	" << p.marca_ << "	" << p.codigo_ << "	" << p.quantidade_ << "	" << p.getValorTotal() 
+	<< "	" << p.dataF_ << endl ;
 	return os ;
 } 
 

@@ -8,6 +8,8 @@
  */
 #include "loja.hpp"
 #include "funcoes.hpp"
+#include "produtos.hpp"
+
 void loja() {
 	
 	int n;
@@ -133,37 +135,49 @@ void cadastro() {
 
 void vender() 
 { 	// LEMBRANDO QUE TUDO ESTA COMO STRING POR ENQUANTO.
-	string nome, codigoProd, fabricacao,preco, validade, marca, tipo, condicao, quantidade, Codvendedor;
+	string nome, marca, condicao ;
+	float preco  ;
+	int quantidade , dia , mes , ano ;
+	Produto p ;
 	// LEMBRAR TAMBEM DE ALTERAR A CLASSE PRODUTO, PARA ESSAS DESCRIÇOES ACIMA.
 	cout << "Digite os dados do produto abaixo:\n";
 	
 
 	cout << "Nome: ";
 	cin >> nome;
-
+	p.setNome(nome) ;
 	cout << "Preço: ";
 	cin >> preco;
+	p.setPreco(preco) ;
 
 	cout << "Código produto: ";
 	// METODO QUE VAI CONSEGUIR O CODIGO DO PRODUTO.
-
-	cout << "Data de fabricacao: ";
-	cin >> fabricacao;
-
-	cout << "Validade (Caso não possua, digite (NONE)) : ";
-	cin >> validade;
+	p.setCodigo(0000) ;
+	
+	cout << "Data de fabricacao " << endl ;
+	cout << "Dia: ";
+	cin >> dia ;
+	cout << "Mes: ";
+	cin >> mes ;
+	cout << "Ano: ";
+	cin >> ano ;
+	Data d(dia,mes,ano) ;
+	p.setFabricacao(d) ;
+	//cout << "Validade (Caso não possua, digite (NONE)) : ";
+	//cin >> validade;
 
 	cout << "Marca: ";
 	cin >> marca;
+	p.setMarca(marca) ;
 
-	cout << "Tipo: ";
-	cin >> tipo;
-
+	
 	cout << "Condicao (novo/usador) : ";
 	cin >> condicao;
+	p.setCondicao(condicao) ;
 
 	cout << "Quantidade: ";
 	cin >> quantidade;
+	p.setQuantidade(quantidade) ;
 
 	cout << "Código do vendedor: ";
 	// METODO QUE VAI CONSEGUIR CODIGO DO VENDEDOR.
@@ -171,25 +185,7 @@ void vender()
 	std::ofstream out;
 	out.open("produtos2.txt", std::ofstream::app);
 	// ADICIONA TUDO NO TXT COM UM ESPAÇO ENTRE AS PALAVRAS.
-	out << nome;
-	out << " ";
-	out << preco;
-	out << " ";
-	out << codigoProd;
-	out << " ";
-	out << fabricacao;
-	out << " ";
-	out << validade;
-	out << " ";
-	out << marca;
-	out << " ";
-	out << tipo;
-	out << " ";
-	out << condicao;
-	out << " ";
-	out << quantidade;
-	out << " ";
-	out << "\n";
+	out << p << endl;
 	
 
 }
