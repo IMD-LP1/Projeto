@@ -17,6 +17,7 @@ using std::cin;
 
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 
 using std::string;
 
@@ -30,5 +31,6 @@ void cadastro();
 void buscar();
 void vender();
 string verificaUsuario(string usuario, int n);
+void buscarProduto(string n);
 
 #endif //_LOJA_HPP_
