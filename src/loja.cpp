@@ -242,7 +242,7 @@ void vender()
 
 string verificaUsuario(string usuario, int n)
 {
-	std::ifstream file("usuarios.txt");
+	std::ifstream file("./database/usuarios.txt");
 	 if(!file.is_open())
 	 {
 	 	cout << "ERRO: Programa não conseguiu verificar os usuarios\n";
@@ -276,7 +276,7 @@ void buscarProduto(string n)
 	aux[1] = n[1];
 	aux[2] = n[2];
 	
-	std::ifstream file("produtos.txt");
+	std::ifstream file("./database/produtos.txt");
 	if(!file.is_open())
 	 {
 	 	cout << "ERRO: Programa não conseguiu encontrar o arquivo txt\n";
@@ -325,7 +325,7 @@ void buscarProduto(string n)
 void ImprimeTodos()
 {
 
-	std::ifstream file("produtos.txt");
+	std::ifstream file("./database/produtos.txt");
 	if(!file.is_open())
 	 {
 	 	cout << "ERRO: Programa não conseguiu encontrar o arquivo txt\n";

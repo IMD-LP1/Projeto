@@ -36,7 +36,7 @@ int gerarCodigo(string nome) {
 }
 
 void salvarUsuarios (vector<Usuario>& v) {
-	ofstream saida("../database/usuario.txt") ;
+	ofstream saida("./database/usuario.txt") ;
 	if(saida.bad() || !saida || (saida.is_open() == 0)) {
 		cerr << "O arquivo usuario.txt nao abriu corretamente" << endl ;
 		cerr << "O programa sera encerrado" << endl ;
@@ -55,7 +55,7 @@ void salvarUsuarios (vector<Usuario>& v) {
 }
 
 void salvarProdutos (vector<Produto>& p) {
-	ofstream saida("../database/produtos.txt") ;
+	ofstream saida("./database/produtos.txt") ;
 	if(saida.bad() || !saida || (saida.is_open() == 0)) {
 		cerr << "O arquivo produtos.txt nao abriu corretamente" << endl ;
 		cerr << "O programa sera encerrado" << endl ;
@@ -75,7 +75,7 @@ void salvarProdutos (vector<Produto>& p) {
 
 
 void carregarUsuarios (vector<Usuario>& v) {
-	ifstream entrada("../database/usuario.txt") ;
+	ifstream entrada("./database/usuario.txt") ;
 	if(entrada.bad() || !entrada || (entrada.is_open() == 0)) {
 		cerr << "O arquivo usuario.txt nao abriu corretamente" << endl ;
 		cerr << "O programa sera encerrado" << endl ;
@@ -90,7 +90,7 @@ void carregarUsuarios (vector<Usuario>& v) {
 }
 
 void carregarProdutos (vector<Produto>& v) {
-	ifstream entrada("../database/produtos.txt") ;
+	ifstream entrada("./database/produtos.txt") ;
 	if(entrada.bad() || !entrada || (entrada.is_open() == 0)) {
 		cerr << "O arquivo produtos.txt nao abriu corretamente" << endl ;
 		cerr << "O programa sera encerrado" << endl ;
