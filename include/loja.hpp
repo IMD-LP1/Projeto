@@ -26,11 +26,12 @@ using std::string;
 
 #include <cstdlib>
 
+#include "produtos.hpp"
 #include "usuario.hpp"
 
-void loja(vector<Usuario>& v);
+void loja(vector<Usuario>& v , vector<Produto>& p);
 void login();
-void cadastro(vector<Usuario>& v);
+void cadastro(vector<Usuario>& v , vector<Produto>& p);
 void buscar();
 void vender();
 string verificaUsuario(string usuario, int n);

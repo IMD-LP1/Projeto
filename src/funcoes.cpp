@@ -8,7 +8,8 @@ using std::string ;
 #include <stdlib.h>
 
 #include "funcoes.hpp"
-#include "usuario.hpp" 
+#include "usuario.hpp"
+#include "produtos.hpp" 
 
 void progresso(int n) {
 	
@@ -51,4 +52,54 @@ void salvarUsuarios (vector<Usuario>& v) {
 		saida << i << endl ;
 	}
 	saida.close() ;
+}
+
+void salvarProdutos (vector<Produto>& p) {
+	ofstream saida("../database/produtos.txt") ;
+	if(saida.bad() || !saida || (saida.is_open() == 0)) {
+		cerr << "O arquivo produtos.txt nao abriu corretamente" << endl ;
+		cerr << "O programa sera encerrado" << endl ;
+		exit(1) ;
+	}
+	
+	/*for (vector<Usuario>::iterator it = v.begin() ; it != v.end() ; it++) {
+		cout << *it << endl ;
+		saida << *it << endl ;
+	}*/
+	for (Produto i : p) {
+		cout << i << endl ;
+		saida << i << endl ;
+	}
+	saida.close() ;
+}
+
+
+void carregarUsuarios (vector<Usuario>& v) {
+	ifstream entrada("../database/usuario.txt") ;
+	if(entrada.bad() || !entrada || (entrada.is_open() == 0)) {
+		cerr << "O arquivo usuario.txt nao abriu corretamente" << endl ;
+		cerr << "O programa sera encerrado" << endl ;
+		exit(1) ;
+	}
+	Usuario u ;
+	while (!entrada.eof()) {
+		entrada >> u ;
+		v.push_back(u) ; 
+	}
+	entrada.close() ;
+}
+
+void carregarProdutos (vector<Produto>& v) {
+	ifstream entrada("../database/produtos.txt") ;
+	if(entrada.bad() || !entrada || (entrada.is_open() == 0)) {
+		cerr << "O arquivo produtos.txt nao abriu corretamente" << endl ;
+		cerr << "O programa sera encerrado" << endl ;
+		exit(1) ;
+	}
+	Produto p ;
+	while (!entrada.eof()) {
+		entrada >> p ;
+		v.push_back(p) ; 
+	}
+	entrada.close() ;
 }

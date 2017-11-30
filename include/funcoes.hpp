@@ -3,6 +3,7 @@
 
 #include "funcoes.hpp"
 #include "usuario.hpp"
+#include "produtos.hpp"
 
 #include <iostream>
 using std::cout;
@@ -21,6 +22,8 @@ using std::ofstream ;
 void progresso(int n);
 int gerarCodigo(string tipo);
 void salvarUsuarios (vector<Usuario> &v) ;
-
+void carregarUsuarios(vector<Usuario>& v) ;
+void salvarProdutos (vector<Produto> &v) ;
+void carregarProdutos(vector<Produto>& v) ;
 
 #endif //_FUNCOES_HPP_

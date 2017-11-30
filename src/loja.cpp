@@ -10,7 +10,7 @@
 #include "funcoes.hpp"
 #include "produtos.hpp"
 
-void loja(vector<Usuario>& v) {
+void loja(vector<Usuario>& v ,vector<Produto>& p ) {
 	
 	int n;
 	int varlogin = 0;
@@ -42,7 +42,7 @@ void loja(vector<Usuario>& v) {
 		}
 			else {
 				cout << "Login já efetuado:\n";
-				loja(v);
+				loja(v , p);
 				break;
 			}
 
@@ -50,7 +50,7 @@ void loja(vector<Usuario>& v) {
 
 		case 2:	
 			//ut << "Cadastrar-se:" << endl;
-			cadastro(v);
+			cadastro(v, p);
 			break;
 
 
@@ -78,7 +78,8 @@ void loja(vector<Usuario>& v) {
 
 
 		case 0:
-			salvarUsuarios (v) ;
+			salvarUsuarios(v) ;
+			salvarProdutos(p) ;
 			exit(EXIT_SUCCESS);
 
 
@@ -131,7 +132,7 @@ void login() {
 
 }
 
-void cadastro(vector<Usuario> &v) {
+void cadastro(vector<Usuario> &v ,vector<Produto> &p ) {
 
 	char opcao;
 	string nome;
@@ -178,7 +179,7 @@ void cadastro(vector<Usuario> &v) {
 		cout << "Precione enter para continuar " << endl;
 		cin.ignore().get();
 		system("sleep 2");
-		loja(v);
+		loja(v , p);
 	}
 }
 

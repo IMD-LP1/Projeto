@@ -35,7 +35,11 @@ int main() {
 	cout << "[OK]" << endl;
 	progresso(3);
 	cout << endl;
-	vector<Usuario> v;
-	loja(v);
+	vector<Usuario> vu;
+	vector<Produto> vp;
+	carregarUsuarios(vu);
+	carregarProdutos(vp) ;
+
+	loja(vu, vp);
 
 }
