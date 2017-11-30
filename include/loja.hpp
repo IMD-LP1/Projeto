@@ -35,5 +35,6 @@ void buscar();
 void vender();
 string verificaUsuario(string usuario, int n);
 void buscarProduto(string n);
+void ImprimeTodos();
 
 #endif //_LOJA_HPP_

@@ -13,6 +13,7 @@
 void loja(vector<Usuario>& v) {
 	
 	int n;
+	int varlogin = 0;
 	system("clear");
 
 	cout << "\tE-Commerce" << endl;
@@ -20,6 +21,7 @@ void loja(vector<Usuario>& v) {
 	cout << "2-Cadastrar" << endl;
 	cout << "3-Buscar" << endl;
 	cout << "4-Vender" << endl;
+	cout << "5-Ver todos produtos disponíveis" << endl;
 	cout << "0-sair" << endl;
 	
 	cin >> n;
@@ -30,24 +32,64 @@ void loja(vector<Usuario>& v) {
  	
 	
 	switch(n) {
+
 		case 1:
+			if(varlogin == 0) {
 			//ut << "Efetuar login:" << endl;
 			login();
+			varlogin++;
 			break;
+		}
+			else {
+				cout << "Login já efetuado:\n";
+				loja();
+				break;
+			}
+
+
+
 		case 2:	
 			//ut << "Cadastrar-se:" << endl;
 			cadastro(v);
 			break;
+
+
 		case 3:
+			if(varlogin != 0) {
 			//cout << "Buscar Produto:" << endl;
 			buscar();
 			break;
+		}
+			else {
+				cout << "É necessário efetuar login primeiro.\n";
+				break;
+			}
+
+
 		case 4:
+			if(varlogin != 0) {
 			//cout << "Vender produto:" << endl;
 			vender();
+			break;
+			}
+			else {
+				cout << "É necessário efetuar login primeiro.\n";
+			}
+
+
 		case 0:
 			salvarUsuarios (v) ;
 			exit(EXIT_SUCCESS);
+
+
+		case 5: 
+			if(varlogin != 0) {
+				ImprimeTodos();
+				break;
+			}
+			else {
+				cout << "É necessário efetuar login primeiro.\n";
+			}
 		default:
 			exit(EXIT_FAILURE);
 	}
@@ -58,7 +100,7 @@ void buscar() {
 	
 	string produto;	
 	
-	cout << "O que deseja buscar: ";
+	cout << "O nome do produto que deseja buscar: ";
 	cin >> produto;
 	buscarProduto(produto);
 
@@ -85,7 +127,6 @@ void login() {
 	cout << "OK!\n";  
 	//VERIFICAR SE SENHA CORREMPONDO COM A CADASTRADA CASO CONTRARIO PEDIR PARA O USUARIO TENTAR
 	//NOVAMENTE CASO ELE ERRE 3 VEZES INFORMAR QUE ELE DEVE ENTRAR EM CONTATO COM O SUPORTE
-
 	// SE TUDO FOI OK FAZER LOGIN NO SISTEMA 
 
 }
@@ -142,7 +183,7 @@ void cadastro(vector<Usuario> &v) {
 }
 
 void vender() 
-{ 	// LEMBRANDO QUE TUDO ESTA COMO STRING POR ENQUANTO.
+{ 	
 	string nome, marca, condicao ;
 	float preco  ;
 	int quantidade , dia , mes , ano ;
@@ -278,4 +319,22 @@ void buscarProduto(string n)
 			 	 cout << "-----------------------" << endl;
 			 	}
 			 	}
+}
+
+void ImprimeTodos()
+{
+
+	std::ifstream file("produtos.txt");
+	if(!file.is_open())
+	 {
+	 	cout << "ERRO: Programa não conseguiu encontrar o arquivo txt\n";
+	 	// ADICIONAR METODO DE SAIDA.
+	 }
+	cout << "-------------- PRODUTOS DISPONIVEIS----------------" << endl;
+	  while (!file.eof()){
+	  			 string line, word;
+	  			 getline(file, line);
+			 	 cout << line << endl;
+
+	}
 }
