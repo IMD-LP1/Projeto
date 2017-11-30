@@ -271,3 +271,21 @@ void buscarProduto(string n)
 			 	}
 			 	}
 }
+
+void ImprimeTodos()
+{
+
+	std::ifstream file("produtos.txt");
+	if(!file.is_open())
+	 {
+	 	cout << "ERRO: Programa não conseguiu encontrar o arquivo txt\n";
+	 	// ADICIONAR METODO DE SAIDA.
+	 }
+	cout << "-------------- PRODUTOS DISPONIVEIS----------------" << endl;
+	  while (!file.eof()){
+	  			 string line, word;
+	  			 getline(file, line);
+			 	 cout << line << endl;
+
+	}
+}
