@@ -62,7 +62,7 @@ void Usuario::setEmail(const string usuario) {this->usuario_ = usuario;}
 string Usuario::getEmail() {return usuario_;}
 
 void Usuario::setCodigo(const int codigo) {this->codigo_ = codigo;}
-int Usuario::getCodigo()	 {return codigo_;}
+int Usuario::getCodigo() {return codigo_;}
 
 void Usuario::setSenha(const string senha) {this->senha_ = senha;}
 string Usuario::getSenha() {return senha_;}
@@ -80,5 +80,4 @@ istream& operator>>(istream& is, Usuario &u) {
 	is >> u.nome_ >> u.idade_ >> u.CPF_ >> u.data_ >> u.usuario_ >> u.codigo_ >> u.senha_ >> u.telefone_ ;
 	return is ;
 } */
-
 

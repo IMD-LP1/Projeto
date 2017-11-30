@@ -36,54 +36,42 @@ void loja(vector<Usuario>& v ,vector<Produto>& p ) {
 
 		case 1:
 			if(varlogin == 0) {
-			//ut << "Efetuar login:" << endl;
-			login();
-			varlogin++;
-			break;
-		}
-			else {
+				//ut << "Efetuar login:" << endl;
+				login();
+				varlogin++;
+				break;
+			} else {
 				cout << "Login já efetuado:\n";
 				loja(v , p);
 				break;
 			}
 
-
-
 		case 2:	
 			//ut << "Cadastrar-se:" << endl;
 			cadastro(v, p);
 			break;
-
-
 		case 3:
 			if(varlogin != 0) {
-			//cout << "Buscar Produto:" << endl;
-			buscar();
-			break;
-		}
-			else {
+				//cout << "Buscar Produto:" << endl;
+				buscar();
+				break;
+			} else {
 				cout << "É necessário efetuar login primeiro.\n";
 				break;
 			}
-
-
 		case 4:
 			if(varlogin != 0) {
-			//cout << "Vender produto:" << endl;
-			vender();
-			break;
-			}
-			else {
+				//cout << "Vender produto:" << endl;
+				vender();
+				break;
+			} else {
 				cout << "É necessário efetuar login primeiro.\n";
+
 			}
-
-
 		case 0:
 			salvarUsuarios(v) ;
 			salvarProdutos(p) ;
 			exit(EXIT_SUCCESS);
-
-
 		case 5: 
 			if(varlogin != 0) {
 				ImprimeTodos();
@@ -237,7 +225,7 @@ void vender()
 	// METODO QUE VAI CONSEGUIR CODIGO DO VENDEDOR.
 
 	std::ofstream out;
-	out.open("produtos2.txt", std::ofstream::app);
+	out.open("./database/produtos.txt", std::ofstream::app);
 	// ADICIONA TUDO NO TXT COM UM ESPAÇO ENTRE AS PALAVRAS.
 	out << p << endl;
 	
@@ -250,7 +238,7 @@ string verificaUsuario(string usuario, int n)
 	 if(!file.is_open())
 	 {
 	 	cout << "ERRO: Programa não conseguiu verificar os usuarios\n";
-	 	return "";
+	 	exit(EXIT_FAILURE);
 	 }
 		 while (!file.eof()){
 		 	  	 string line, user, senha, nome, idade, dataNascimento;
@@ -284,6 +272,7 @@ void buscarProduto(string n)
 	if(!file.is_open())
 	 {
 	 	cout << "ERRO: Programa não conseguiu encontrar o arquivo txt\n";
+	 	exit(EXIT_FAILURE);
 	 }
 
 	  while (!file.eof()){
