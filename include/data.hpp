@@ -12,6 +12,11 @@
 #include <string>
 using std::string;
 
+#include <istream>
+using std::istream ;
+#include <ostream>
+using std::ostream ;
+
 #include <sstream>
 
 /**
@@ -50,7 +55,10 @@ public:
 	int getAno();
 
 	/** @brief	Retorna a data em formato de string */
-	string dataString();
+	//string dataString();
+
+	friend ostream& operator<<(ostream& os, Data &d) ;
+	friend istream& operator>>(istream& is, Data &d) ;
 };
 
 #endif //_DATA_HPP_

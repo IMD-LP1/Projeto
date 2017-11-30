@@ -6,7 +6,10 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+#include <istream>
+using std::istream ;
 #include <ostream>
+using std::ostream ;
 
 #include <cctype>
 
@@ -54,6 +57,8 @@ public:
 
 	float getValorTotal();
 
+	friend ostream& operator<<(ostream& os, Produto &p) ;
+	friend istream& operator>>(istream& is, Produto &p) ;
 	
 };
 

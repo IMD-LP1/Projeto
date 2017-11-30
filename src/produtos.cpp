@@ -105,12 +105,12 @@ void Produto::setFabricacao(Data d) {
 	this->dataF_ = d ;	
 }
 
-string Produto::getFabricacao() {
+/*string Produto::getFabricacao() {
 	string fabricacao_ ;
 	fabricacao_ = dataF_.dataString();
 	return fabricacao_;
 	//return dataF_ ;
-}
+} */
 
 
 /**	@brief Retorna o total a ser pago por produto */
@@ -118,20 +118,17 @@ float Produto::getValorTotal() {
 	return this->preco_ * this->quantidade_;
 }
 
-/*void escrever(std::ostream& out) const {
-		cout << "Produto: " << nome_ << endl;
-		cout << "Preço: " << preco_ << endl;
-		cout << "Marca: " << marca_ << endl;
-		cout << "Condição: " << condicao_ << endl;
-		cout << "Codigo: " << codigo_ << endl;
-		cout << "Quantidade: " << quantidade_ << endl;
-		cout << "Data Fabricação: " << dataF_.dataString() << endl;
-}*/
-/*
-std::ostream& operator<<(std::ostream& out) {
-	a->escrever(out) ;
-	return out ;
-} */
+ostream& operator<<(ostream& os, Produto &p) {
+	os << p.nome_ << ";" << p.preco_ << ";" << p.marca_ << ";" << p.codigo_ << ";" << p.quantidade_ << ";" << p.getValorTotal() 
+	<< ";" << p.dataF_ << endl ;
+	return os ;
+} 
+
+istream& operator>>(istream& is, Produto &p) {
+	is >> p.nome_ >> p.preco_ >> p.marca_ >> p.codigo_ >> p.quantidade_ >> p.dataF_ ;
+	return is ;
+}
+
 // void Produto::atualizarDataBase() {
 
 // }

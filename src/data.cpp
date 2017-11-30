@@ -57,7 +57,7 @@ int Data::getAno() {
 }
 
 /**	@brief Retorna o data na forma de string */
-string Data::dataString() {
+/*string Data::dataString() {
 	std::stringstream d, m, a;
 	d << dia_;
 	m << mes_;
@@ -65,4 +65,14 @@ string Data::dataString() {
 
 	return d.str() + "/" + m.str() + "/" + a.str();
 	
+} */
+
+ostream& operator<<(ostream& os, Data &d) {
+	os << d.dia_ << "/" << d.mes_ << "/" << d.ano_ ;
+	return os ;
+}
+
+istream& operator>>(istream& is, Data &d) {
+	is >> d.dia_ >> d.mes_ >> d.ano_ ;
+	return is ;
 }
